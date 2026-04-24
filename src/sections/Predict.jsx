@@ -63,7 +63,7 @@ export default function Predict() {
   const [selectedTeam, setSelectedTeam] = useState(null);
   const { predictions, setPrediction, predictionCount } = usePredictions();
   const { liveMatch, isLocked } = useLiveMatch();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const matches = MATCHES_BY_GROUP[activeGroup] || [];
   const groupPicked = matches.filter((m) => predictions[m.id]).length;

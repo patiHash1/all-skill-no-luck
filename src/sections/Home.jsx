@@ -29,7 +29,7 @@ function useCountdown(targetTime) {
   return time;
 }
 
-export default function Home({ onPredict, onResults }) {
+export default function Home({ onPredict }) {
   const { predictions, setPrediction } = usePredictions();
   const { liveMatch, kickoffTime, isLocked } = useLiveMatch();
   const { days, hours, minutes, seconds } = useCountdown(kickoffTime);

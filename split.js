@@ -1,3 +1,4 @@
+/* eslint-env node */
 const fs = require('fs');
 const css = fs.readFileSync('src/styles/components.css', 'utf8').split('\n');
 

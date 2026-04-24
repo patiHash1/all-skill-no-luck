@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { MOCK_USERS } from '../data/matches';
 import { usePredictions } from '../context/PredictionContext';
 import { useTranslation } from 'react-i18next';
@@ -14,8 +13,7 @@ function getRankClass(rank) {
 }
 
 export default function Leaderboard() {
-  const { username, setUsername, userScore } = usePredictions();
-  const [draft, setDraft] = useState('');
+  const { username, userScore } = usePredictions();
   const { t } = useTranslation();
 
   // Build ranked list: mock users + current user (if named)
