@@ -4,20 +4,21 @@ import FlagIcon from '../components/FlagIcon';
 import { MATCHES_BY_GROUP } from '../data/matches';
 import { usePredictions } from '../context/PredictionContext';
 import { useTranslation } from 'react-i18next';
+import TeamStatsModal from '../components/TeamStatsModal';
 
-function MatchCard({ match, prediction, onPick, t }) {
+function MatchCard({ match, prediction, onPick, t, onTeamClick }) {
   const homeName = t(`teams.${match.home}`, match.home);
   const awayName = t(`teams.${match.away}`, match.away);
 
   return (
     <div className="match-card">
       <div className="match-teams">
-        <div className="team-col">
+        <div className="team-col" onClick={() => onTeamClick(homeName, match.home)} title={`View ${homeName} Stats`}>
           <span className="team-flag"><FlagIcon team={match.home} /></span>
           <span className="team-name">{homeName}</span>
         </div>
         <span className="vs-label">{t('predict.vs')}</span>
-        <div className="team-col">
+        <div className="team-col" onClick={() => onTeamClick(awayName, match.away)} title={`View ${awayName} Stats`}>
           <span className="team-flag"><FlagIcon team={match.away} /></span>
           <span className="team-name">{awayName}</span>
         </div>
@@ -49,6 +50,7 @@ function MatchCard({ match, prediction, onPick, t }) {
 
 export default function Predict() {
   const [activeGroup, setActiveGroup] = useState('A');
+  const [selectedTeam, setSelectedTeam] = useState(null);
   const { predictions, setPrediction, predictionCount } = usePredictions();
   const { t, i18n } = useTranslation();
 
@@ -150,9 +152,18 @@ export default function Predict() {
             prediction={predictions[match.id]}
             onPick={setPrediction}
             t={t}
+            onTeamClick={(name, raw) => setSelectedTeam({ name, raw })}
           />
         ))}
       </div>
+
+      {selectedTeam && (
+        <TeamStatsModal
+          teamName={selectedTeam.name}
+          countryName={selectedTeam.raw}
+          onClose={() => setSelectedTeam(null)}
+        />
+      )}
     </div>
   );
 }

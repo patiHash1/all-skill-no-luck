@@ -24,6 +24,17 @@
     "theme_light": "Claro",
     "language": "Idioma"
   },
+  "stats": {
+    "title": "Estadísticas",
+    "ranking": "Ranking FIFA",
+    "wins": "Mundiales Ganados",
+    "appearances": "Participaciones",
+    "form": "Racha Reciente",
+    "unavailable": "Estadísticas no disponibles.",
+    "form_w": "G",
+    "form_d": "E",
+    "form_l": "P"
+  },
   "home": {
     "badge": "Juego Oficial de Profecías",
     "title_line1": "COPA",
@@ -39,7 +50,16 @@
     "stats_groups": "Grupos",
     "stats_matches": "Partidos",
     "stats_prophecies": "Profecías",
-    "btn_predict": "Hacer una Profecía →"
+    "btn_predict": "Hacer una Profecía →",
+    "recent_prophecies": "Tus Profecías Recientes",
+    "highlights": "Momentos Destacados",
+    "view_all": "Ver Todo →"
+  },
+  "highlights": {
+    "arg_2022": "Argentina consigue su tercera estrella tras una emocionante final contra Francia.",
+    "fra_2018": "Un joven Kylian Mbappé lidera a Francia hacia la gloria, derrotando a Croacia 4-2.",
+    "ger_2014": "El gol de Götze en la prórroga corona a Alemania como campeona en Brasil.",
+    "esp_2010": "El dominio del tiki-taka de España culmina en su primer título Mundial."
   },
   "predict": {
     "label": "Profecías de la Fase de Grupos",

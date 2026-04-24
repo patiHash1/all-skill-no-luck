@@ -1,13 +1,26 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const PredictionContext = createContext(null);
+const DUMMY_PREDICTIONS = {
+  'A-0': 'home',
+  'A-1': 'draw',
+  'A-2': 'away',
+  'B-0': 'home',
+  'B-1': 'away',
+  'C-0': 'home'
+};
 
 export function PredictionProvider({ children }) {
   const [predictions, setPredictions] = useState(() => {
     try {
-      return JSON.parse(localStorage.getItem('fifa2026_predictions') || '{}');
+      const saved = localStorage.getItem('fifa2026_predictions');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        return Object.keys(parsed).length > 0 ? parsed : DUMMY_PREDICTIONS;
+      }
+      return DUMMY_PREDICTIONS;
     } catch {
-      return {};
+      return DUMMY_PREDICTIONS;
     }
   });
 

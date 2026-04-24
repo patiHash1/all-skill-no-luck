@@ -231,6 +231,75 @@
   background: var(--color-text);
   color: var(--color-bg);
 }
+
+/* ── Stats Modal Specifics ───────────────────── */
+.stats-modal {
+  max-width: 400px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.stat-box {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.stat-box-val {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--color-accent);
+  margin-bottom: 0.2rem;
+}
+
+.stat-box-lbl {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--color-muted);
+}
+
+.form-badges {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.form-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.form-w { background: var(--color-green); }
+.form-d { background: #6c757d; }
+.form-l { background: var(--color-red); }
+
+.stats-unavailable {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
 /* ── Match card — FotMob data-row inspired ── */
 .match-card {
   background: var(--color-card);
@@ -284,6 +353,14 @@
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.team-col:hover {
+  background: var(--color-bg);
 }
 
 .team-flag {
@@ -609,10 +686,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100dvh - 116px);
   text-align: center;
   gap: 1.5rem;
-  padding: 1.5rem 0;
+  padding: 2.5rem 0 3.5rem;
 }
 
 /* Goal.com badge: sharp red pill */
@@ -633,7 +709,7 @@
 /* UEFA-style massive heading */
 .hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(4.5rem, 15vw, 10rem);
+  font-size: clamp(3rem, 10vw, 6rem);
   line-height: 0.86;
   color: var(--color-text);
   letter-spacing: 0.03em;
@@ -671,7 +747,7 @@
 
 .countdown-value {
   font-family: var(--font-heading);
-  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-size: clamp(1.5rem, 4vw, 2rem);
   color: var(--color-text);
   line-height: 1;
 }
@@ -725,6 +801,92 @@
   letter-spacing: 0.12em;
   color: var(--color-muted);
   font-weight: 700;
+}
+
+/* ── Home Page Sub-sections ───────────────── */
+.home-section-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 0.25rem;
+  display: inline-block;
+}
+
+.home-section {
+  margin-bottom: 3.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .highlight-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.highlight-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.highlight-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-border-2);
+}
+
+.highlight-banner {
+  background: var(--color-card-2);
+  padding: 1.25rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.highlight-flag {
+  font-size: 3.5rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+}
+
+.highlight-content {
+  padding: 1rem;
+}
+
+.highlight-year {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.2rem;
+  display: block;
+}
+
+.highlight-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+}
+
+.highlight-desc {
+  font-size: 0.85rem;
+  color: var(--color-muted-2);
+  line-height: 1.5;
 }
 
 /* ── Results summary cards ───────────────── */

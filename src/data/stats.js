@@ -1,0 +1,18 @@
+export const TEAM_STATS = {
+  'Argentina': { ranking: 1, wins: 3, appearances: 18, form: ['W', 'W', 'W', 'D', 'W'] },
+  'France': { ranking: 2, wins: 2, appearances: 16, form: ['W', 'L', 'W', 'W', 'W'] },
+  'Brazil': { ranking: 5, wins: 5, appearances: 22, form: ['L', 'D', 'L', 'W', 'W'] },
+  'England': { ranking: 3, wins: 1, appearances: 16, form: ['W', 'D', 'W', 'W', 'D'] },
+  'Spain': { ranking: 8, wins: 1, appearances: 16, form: ['W', 'W', 'W', 'W', 'W'] },
+  'Germany': { ranking: 16, wins: 4, appearances: 20, form: ['W', 'D', 'W', 'L', 'W'] },
+  'United States': { ranking: 11, wins: 0, appearances: 11, form: ['W', 'L', 'W', 'W', 'L'] },
+  'Mexico': { ranking: 15, wins: 0, appearances: 17, form: ['L', 'D', 'W', 'L', 'D'] },
+  'Japan': { ranking: 18, wins: 0, appearances: 7, form: ['W', 'W', 'W', 'W', 'W'] },
+  'Morocco': { ranking: 12, wins: 0, appearances: 6, form: ['W', 'W', 'D', 'W', 'W'] },
+  'Croatia': { ranking: 10, wins: 0, appearances: 6, form: ['L', 'W', 'D', 'L', 'D'] },
+  'Netherlands': { ranking: 6, wins: 0, appearances: 11, form: ['W', 'W', 'L', 'W', 'W'] },
+  'Portugal': { ranking: 7, wins: 0, appearances: 8, form: ['W', 'W', 'W', 'W', 'L'] },
+  'Italy': { ranking: 9, wins: 4, appearances: 18, form: ['D', 'W', 'W', 'D', 'W'] },
+  'Senegal': { ranking: 17, wins: 0, appearances: 3, form: ['W', 'D', 'W', 'W', 'W'] },
+  'South Korea': { ranking: 22, wins: 0, appearances: 11, form: ['W', 'D', 'W', 'D', 'W'] },
+};

@@ -24,6 +24,17 @@
     "theme_light": "Light",
     "language": "Language"
   },
+  "stats": {
+    "title": "Team Stats",
+    "ranking": "FIFA Ranking",
+    "wins": "World Cup Wins",
+    "appearances": "Appearances",
+    "form": "Recent Form",
+    "unavailable": "Stats unavailable for this team.",
+    "form_w": "W",
+    "form_d": "D",
+    "form_l": "L"
+  },
   "home": {
     "badge": "Official Prophecy Game",
     "title_line1": "FIFA",
@@ -39,7 +50,16 @@
     "stats_groups": "Groups",
     "stats_matches": "Matches",
     "stats_prophecies": "Prophecies",
-    "btn_predict": "Give a Prophecy →"
+    "btn_predict": "Give a Prophecy →",
+    "recent_prophecies": "Your Recent Prophecies",
+    "highlights": "World Cup Highlights",
+    "view_all": "View All →"
+  },
+  "highlights": {
+    "arg_2022": "Argentina secures their third star after a thrilling final against France.",
+    "fra_2018": "A young Kylian Mbappé leads France to glory, defeating Croatia 4-2.",
+    "ger_2014": "Mario Götze's late extra-time volley crowns Germany champions in Brazil.",
+    "esp_2010": "Spain's tiki-taka dominance culminates in their first ever World Cup title."
   },
   "predict": {
     "label": "Group Stage Prophecies",
