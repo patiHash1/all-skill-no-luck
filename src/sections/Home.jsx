@@ -150,7 +150,11 @@ export default function Home({ onPredict, onResults }) {
       </div>
 
       {selectedTeam && (
-        <TeamStatsModal teamName={selectedTeam} onClose={() => setSelectedTeam(null)} />
+        <TeamStatsModal 
+          teamName={t(`teams.${selectedTeam}`, selectedTeam)} 
+          countryName={selectedTeam} 
+          onClose={() => setSelectedTeam(null)} 
+        />
       )}
 
       {/* ── Recent Prophecies Section ── */}

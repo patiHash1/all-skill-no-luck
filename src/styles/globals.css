@@ -18,12 +18,10 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background-color: var(--color-bg);
-  /* Goal.com style: clean dark, very subtle top red glow */
-  background-image: radial-gradient(
-    ellipse 80% 40% at 50% -10%,
-    rgba(243, 79, 54, 0.06) 0%,
-    transparent 60%
-  );
+  /* Vibrant dual-gradient background */
+  background-image: 
+    radial-gradient(circle at 15% 0%, rgba(155, 44, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 85% 100%, rgba(0, 229, 255, 0.15) 0%, transparent 50%);
   background-attachment: fixed;
 }
 
@@ -45,7 +43,7 @@ img { max-width: 100%; display: block; }
 
 /* Accent-tinted text selection */
 ::selection {
-  background: rgba(243, 79, 54, 0.3);
+  background: rgba(155, 44, 255, 0.3);
   color: #fff;
 }
 

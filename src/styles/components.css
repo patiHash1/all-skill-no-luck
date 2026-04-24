@@ -203,6 +203,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.setting-row:last-child {
+  border-bottom: none;
 }
 
 .setting-label {
@@ -472,19 +478,20 @@
 .btn-primary {
   min-height: 44px;
   padding: 0.65rem 1.75rem;
-  background: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-accent), #00e5ff);
   color: #fff;
   border-radius: 3px;
   font-weight: 700;
   font-size: 0.825rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  transition: background 0.15s, transform 0.1s;
+  transition: opacity 0.15s, transform 0.1s, box-shadow 0.15s;
+  box-shadow: 0 4px 15px rgba(155, 44, 255, 0.3);
   align-self: flex-start;
   -webkit-tap-highlight-color: transparent;
 }
 
-.btn-primary:hover { background: var(--color-accent-2); }
-.btn-primary:active { transform: scale(0.97); background: var(--color-accent-dim); }
+.btn-primary:hover { opacity: 0.9; box-shadow: 0 6px 20px rgba(155, 44, 255, 0.4); }
+.btn-primary:active { transform: scale(0.97); }
 
 

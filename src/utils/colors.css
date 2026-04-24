@@ -5,29 +5,25 @@
 
 @theme {
 
-  /* ── Backgrounds & Surfaces ───────────────────────
-     Goal.com uses true-black with minimal elevation  */
-  --color-bg:        #111111;   /* page background       */
-  --color-surface:   #1a1a1a;   /* elevated surface      */
-  --color-card:      #1e1e1e;   /* card background       */
-  --color-card-2:    #242424;   /* card hover / elevated */
+  /* ── Backgrounds & Surfaces ─────────────────────── */
+  --color-bg:        #0a0a0f;   /* deeper background for contrast */
+  --color-surface:   #12121a;   /* elevated surface      */
+  --color-card:      #161622;   /* card background       */
+  --color-card-2:    #1c1c2a;   /* card hover / elevated */
 
-  /* ── Borders ──────────────────────────────────────
-     Thin, subtle — FotMob data-row style            */
-  --color-border:    #2a2a2a;   /* subtle divider        */
-  --color-border-2:  #333333;   /* visible border        */
+  /* ── Borders ────────────────────────────────────── */
+  --color-border:    #2a2a3a;   /* subtle divider        */
+  --color-border-2:  #3a3a4e;   /* visible border        */
 
-  /* ── Primary Accent — Goal.com Orange-Red ─────────
-     Used for: active states, CTAs, picks, nav stripe */
-  --color-accent:    #f34f36;
-  --color-accent-2:  #ff6b50;   /* lighter — hover state */
-  --color-accent-dim:#c03c27;   /* darker  — pressed     */
+  /* ── Primary Accent — Vibrant Gradient Core ───────── */
+  --color-accent:    #9b2cff;   /* vibrant purple        */
+  --color-accent-2:  #b65aff;   /* lighter — hover state */
+  --color-accent-dim:#7012cc;   /* darker  — pressed     */
 
-  /* ── Secondary — UEFA Royal Blue ─────────────────
-     Used for: group headers, home-win chip           */
-  --color-blue:      #003da5;
-  --color-blue-2:    #0052cc;   /* hover state           */
-  --color-cyan:      #00b2f3;   /* UEFA cyan — highlights */
+  /* ── Secondary — Electric Blue ───────────────── */
+  --color-blue:      #0055ff;
+  --color-blue-2:    #3377ff;   /* hover state           */
+  --color-cyan:      #00e5ff;   /* vibrant cyan          */
 
   /* ── Text Scale ───────────────────────────────────
      High contrast for football data readability     */
