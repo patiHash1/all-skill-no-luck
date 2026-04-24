@@ -1,0 +1,119 @@
+/* ── Top navbar ────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(10, 15, 30, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--color-gold);
+  letter-spacing: 0.08em;
+}
+
+.navbar-brand span {
+  color: #fff;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+.nav-tab-btn {
+  padding: 0.45rem 1.1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-tab-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.nav-tab-btn.active {
+  color: var(--color-navy);
+  background: var(--color-gold);
+  font-weight: 600;
+}
+
+/* ── Bottom navigation (mobile) ──────────────── */
+.bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(10, 15, 30, 0.96);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--color-border);
+  /* safe area for iPhone notch / home indicator */
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.bottom-nav-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 0.6rem 0.25rem 0.5rem;
+  color: var(--color-muted);
+  transition: color 0.15s;
+  min-height: 56px;
+}
+
+.bottom-nav-btn:active {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.bottom-nav-btn.active {
+  color: var(--color-gold);
+}
+
+.bottom-nav-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.bottom-nav-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── Responsive switch ───────────────────────── */
+@media (max-width: 640px) {
+  /* Hide desktop top-nav tabs, show brand only */
+  .nav-tabs {
+    display: none;
+  }
+
+  /* Show bottom nav */
+  .bottom-nav {
+    display: flex;
+  }
+}
