@@ -22,7 +22,14 @@
     "theme": "Theme",
     "theme_dark": "Dark",
     "theme_light": "Light",
-    "language": "Language"
+    "language": "Language",
+    "account": "Account",
+    "login": "Log In",
+    "logout": "Log Out",
+    "username": "Username",
+    "password": "Password",
+    "google_login": "Sign in with Google",
+    "logged_in_as": "Logged in as"
   },
   "stats": {
     "title": "Team Stats",
@@ -53,7 +60,9 @@
     "btn_predict": "Give a Prophecy →",
     "recent_prophecies": "Your Recent Prophecies",
     "highlights": "World Cup Highlights",
-    "view_all": "View All →"
+    "view_all": "View All →",
+    "next_match": "Next Match",
+    "kickoff": "Kickoff"
   },
   "highlights": {
     "arg_2022": "Argentina secures their third star after a thrilling final against France.",
@@ -76,6 +85,8 @@
     "label": "Rankings",
     "title": "Leaderboard",
     "sub": "Scores will be updated live as matches are played",
+    "restricted_title": "Access Restricted",
+    "restricted_desc": "Please log in via the Settings menu (⚙️) to view the global standings.",
     "prompt_label": "Enter your name to join the leaderboard",
     "prompt_placeholder": "e.g. FootballFan99",
     "prompt_btn": "Join Leaderboard",

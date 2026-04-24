@@ -1,0 +1,76 @@
+/* ── Leaderboard — FotMob table style ─────── */
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaderboard-table th {
+  text-align: left;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-muted);
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--color-border-2);
+  font-weight: 700;
+}
+
+.leaderboard-table td {
+  padding: 0.7rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.875rem;
+  vertical-align: middle;
+}
+
+.leaderboard-table tr:last-child td { border-bottom: none; }
+
+.leaderboard-table tbody tr {
+  transition: background 0.1s;
+}
+
+.leaderboard-table tbody tr:hover td {
+  background: var(--color-card-2);
+}
+
+/* Podium rows */
+.podium-row-1 td { background: rgba(243,79,54,0.07) !important; }
+.podium-row-2 td { background: var(--color-card) !important; }
+.podium-row-3 td { background: var(--color-card-2) !important; }
+.user-row td    { background: rgba(243,79,54,0.06) !important; }
+
+@media (max-width: 480px) {
+  .leaderboard-table .col-bar { display: none; }
+}
+
+/* FotMob rank number style */
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.rank-1     { background: var(--color-accent); color: #fff; }
+.rank-2     { background: #333; color: #ccc; }
+.rank-3     { background: #2a2a2a; color: #aaa; }
+.rank-other { background: transparent; color: var(--color-muted); border: 1px solid var(--color-border-2); }
+
+/* Progress bar in leaderboard */
+.score-bar-track {
+  width: 80px;
+  height: 4px;
+  background: var(--color-border-2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.score-bar-fill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 2px;
+}

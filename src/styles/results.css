@@ -1,0 +1,113 @@
+/* ── Results summary cards ───────────────── */
+.results-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 480px) {
+  .results-summary { grid-template-columns: repeat(4, 1fr); }
+}
+
+.summary-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-accent);
+  border-radius: 0 0 3px 3px;
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.summary-card .val {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.summary-card .lbl {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-muted);
+  font-weight: 700;
+}
+
+/* Results group heading */
+.results-group-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--color-cyan);
+  margin: 1.5rem 0 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+.results-group-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border-2);
+}
+
+/* Prophecy row — FotMob fixture-style */
+.prophecy-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.85rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  margin-bottom: 0.35rem;
+  font-size: 0.82rem;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  transition: border-color 0.12s, background 0.12s;
+}
+
+.prophecy-row:hover {
+  background: var(--color-card-2);
+  border-color: var(--color-border-2);
+}
+
+.prophecy-row .teams {
+  color: var(--color-text-2);
+  flex: 1;
+  min-width: 0;
+  font-size: 0.8rem;
+}
+
+/* ── Prediction chips ────────────────────── */
+.prediction-chip {
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+/* Solid accent chips — Goal.com style */
+.chip-home { background: rgba(0,61,165,0.3);   color: var(--color-cyan);   border: 1px solid rgba(0,178,243,0.3); }
+.chip-draw { background: rgba(255,255,255,0.07); color: var(--color-muted-2); border: 1px solid var(--color-border-2); }
+.chip-away { background: rgba(243,79,54,0.2);   color: var(--color-accent-2); border: 1px solid rgba(243,79,54,0.35); }
+
+/* ── Empty state ─────────────────────────── */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.empty-icon { font-size: 2.5rem; opacity: 0.3; }
+.empty-text { color: var(--color-muted-2); font-size: 0.9rem; }

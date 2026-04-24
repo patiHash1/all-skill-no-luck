@@ -3,6 +3,7 @@ import FlagIcon from '../components/FlagIcon';
 import { MATCHES_BY_GROUP } from '../data/matches';
 import { usePredictions } from '../context/PredictionContext';
 import { useTranslation } from 'react-i18next';
+import '../styles/results.css';
 
 const CHIP_CLASS = { home: 'chip-home', draw: 'chip-draw', away: 'chip-away' };
 

@@ -99,10 +99,22 @@ const {
 
 ## Extending Match Data
 
-### Add a new group
-1. Add to `GROUPS` array in `groups.js`
-2. Add all team names to `FLAG_MAP`
-3. `generateMatches()` in `matches.js` will auto-create the 6 matches
+### Data Sources
+
+The application uses static hardcoded lists for standard definitions:
+
+- **`groups.js`**: Defines the 12 groups (A-L), team compositions, and the `FLAG_MAP` for unicode emoji flags.
+- **`matches.js`**: Generates all 72 group stage matches dynamically from the `GROUPS` array on load, ensuring consistent `id` assignments (e.g., `A-0`, `D-2`).
+- **`highlights.js`**: Contains static mock data for historical World Cup highlights shown on the Home page.
+
+## Live Match Simulation
+
+To demonstrate real-time locking mechanics, the application includes a **Live Match Simulation**:
+- Managed by `LiveMatchContext.jsx`.
+- Automatically selects a "Live Match" (e.g., Group A: United States vs Brazil).
+- Sets a dynamic `kickoffTime` 15 minutes in the future upon initial load.
+- Exposes an `isLocked` state that becomes `true` exactly 10 minutes prior to `kickoffTime`.
+- When locked, prediction buttons for this specific match are disabled globally (on both Home and Predict tabs) to simulate real-world betting/prediction constraints.
 
 ### Add knockout stage
 1. Create `src/data/knockout.js` with structured round data:

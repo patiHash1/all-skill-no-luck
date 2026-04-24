@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
 import { usePredictions } from '../context/PredictionContext';
+import { useLiveMatch } from '../context/LiveMatchContext';
 import { useTranslation } from 'react-i18next';
+import '../styles/home.css';
 import { ALL_MATCHES } from '../data/matches';
 import { HIGHLIGHTS_DATA } from '../data/highlights';
 import FlagIcon from '../components/FlagIcon';
+import TeamStatsModal from '../components/TeamStatsModal';
 
-// Target: June 11, 2026 — FIFA World Cup 2026 Kickoff
-const TARGET = new Date('2026-06-11T16:00:00Z').getTime();
+function useCountdown(targetTime) {
+  const [time, setTime] = useState(() => getTime(targetTime));
 
-function useCountdown() {
-  const [time, setTime] = useState(() => getTime());
-
-  function getTime() {
-    const diff = Math.max(0, TARGET - Date.now());
+  function getTime(target) {
+    const diff = Math.max(0, target - Date.now());
     return {
       days:    Math.floor(diff / 86400000),
       hours:   Math.floor((diff % 86400000) / 3600000),
@@ -22,17 +22,20 @@ function useCountdown() {
   }
 
   useEffect(() => {
-    const id = setInterval(() => setTime(getTime()), 1000);
+    const id = setInterval(() => setTime(getTime(targetTime)), 1000);
     return () => clearInterval(id);
-  }, []);
+  }, [targetTime]);
 
   return time;
 }
 
 export default function Home({ onPredict, onResults }) {
-  const { predictions, predictionCount } = usePredictions();
-  const { days, hours, minutes, seconds } = useCountdown();
+  const { predictions, setPrediction } = usePredictions();
+  const { liveMatch, kickoffTime, isLocked } = useLiveMatch();
+  const { days, hours, minutes, seconds } = useCountdown(kickoffTime);
   const { t } = useTranslation();
+  
+  const [selectedTeam, setSelectedTeam] = useState(null);
 
   // Get up to 3 recent predictions
   const recentPredictions = Object.entries(predictions)
@@ -42,6 +45,10 @@ export default function Home({ onPredict, onResults }) {
       return { match, pick };
     })
     .filter((item) => item.match); // ensure match exists
+
+  const livePrediction = predictions[liveMatch.id];
+  const homeName = t(`teams.${liveMatch.home}`, liveMatch.home);
+  const awayName = t(`teams.${liveMatch.away}`, liveMatch.away);
 
   return (
     <div className="page hero-page">
@@ -59,7 +66,7 @@ export default function Home({ onPredict, onResults }) {
           {t('home.title_line1')} <span className="gold">{t('home.title_line2')}</span> {t('home.title_line3')}
         </h1>
 
-        {/* Countdown */}
+        {/* Countdown to Live Match */}
         <div className="countdown" style={{ margin: '0.5rem 0' }}>
           <div className="countdown-unit">
             <span className="countdown-value">{String(days).padStart(2, '0')}</span>
@@ -85,7 +92,66 @@ export default function Home({ onPredict, onResults }) {
         <button className="btn-primary" style={{ fontSize: '0.9rem', padding: '0.6rem 2rem', marginTop: '0.5rem' }} onClick={onPredict}>
           {t('home.btn_predict')}
         </button>
+
+        {/* ── Upcoming Match Demo with Pick Buttons ── */}
+        <div className="upcoming-match" style={{ marginTop: '2rem' }}>
+          <div className="upcoming-match-header">
+            <span>{t('home.next_match')} — Grupo {liveMatch.groupId}</span>
+            <span className="upcoming-match-live">{isLocked ? t('predict.locked', 'LOCKED') : t('home.kickoff')}</span>
+          </div>
+          <div className="upcoming-match-content" style={{ marginTop: '0.5rem' }}>
+            <div className="team-col" onClick={() => setSelectedTeam(liveMatch.home)} style={{ cursor: 'pointer' }}>
+              <span className="team-flag" style={{ fontSize: '2rem' }}><FlagIcon team={liveMatch.home} /></span>
+              <span className="team-name" style={{ fontSize: '0.8rem', marginTop: '0.2rem' }}>{homeName}</span>
+            </div>
+            <div className="upcoming-match-time">
+              <span className="time">
+                {new Date(kickoffTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+              </span>
+              <span className="date">Live Match</span>
+            </div>
+            <div className="team-col" onClick={() => setSelectedTeam(liveMatch.away)} style={{ cursor: 'pointer' }}>
+              <span className="team-flag" style={{ fontSize: '2rem' }}><FlagIcon team={liveMatch.away} /></span>
+              <span className="team-name" style={{ fontSize: '0.8rem', marginTop: '0.2rem' }}>{awayName}</span>
+            </div>
+          </div>
+          
+          <div className="pick-row" style={{ marginTop: '0.75rem' }}>
+            <button 
+              className={`pick-btn ${livePrediction === 'home' ? 'picked' : ''}`} 
+              disabled={isLocked}
+              onClick={() => setPrediction(liveMatch.id, 'home')}
+            >
+              <FlagIcon team={liveMatch.home} /> {homeName.split(' ')[0]} {t('predict.win')}
+            </button>
+            <button 
+              className={`pick-btn ${livePrediction === 'draw' ? 'picked' : ''}`} 
+              disabled={isLocked}
+              onClick={() => setPrediction(liveMatch.id, 'draw')}
+            >
+              {t('predict.draw')}
+            </button>
+            <button 
+              className={`pick-btn ${livePrediction === 'away' ? 'picked' : ''}`} 
+              disabled={isLocked}
+              onClick={() => setPrediction(liveMatch.id, 'away')}
+            >
+              <FlagIcon team={liveMatch.away} /> {awayName.split(' ')[0]} {t('predict.win')}
+            </button>
+          </div>
+          
+          {isLocked && (
+            <div style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--color-accent)', marginTop: '0.5rem', fontWeight: 800, textTransform: 'uppercase' }}>
+              {t('predict.locked_msg', 'Predictions Locked')}
+            </div>
+          )}
+        </div>
+
       </div>
+
+      {selectedTeam && (
+        <TeamStatsModal teamName={selectedTeam} onClose={() => setSelectedTeam(null)} />
+      )}
 
       {/* ── Recent Prophecies Section ── */}
       {recentPredictions.length > 0 && (

@@ -1,0 +1,103 @@
+/* ── Group selector — FotMob tab strip ─────── */
+.group-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.2rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0;
+}
+.group-tabs::-webkit-scrollbar { display: none; }
+
+.group-tab {
+  flex-shrink: 0;
+  min-height: 36px;
+  padding: 0 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.12s, border-color 0.12s;
+  -webkit-tap-highlight-color: transparent;
+  margin-bottom: -1px; /* sit on the border */
+}
+
+.group-tab:hover { color: var(--color-text-2); }
+
+.group-tab.active {
+  color: var(--color-text);
+  border-bottom-color: var(--color-accent);
+}
+
+/* UEFA-style group badge on active */
+.group-tab.active::after {
+  content: '';
+}
+
+/* Single column mobile, multi-col desktop */
+.match-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 500px) {
+  .match-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.65rem;
+  }
+}
+
+/* ── Group header bar — UEFA authority ───── */
+.group-header {
+  background: linear-gradient(90deg, var(--color-blue) 0%, rgba(0,61,165,0.3) 100%);
+  border: 1px solid rgba(0,61,165,0.4);
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.group-header-name {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-cyan);
+  letter-spacing: 0.1em;
+}
+
+.group-header-teams {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.group-header-count {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ── Progress bar ────────────────────────── */
+.progress-track {
+  height: 3px;
+  background: var(--color-border-2);
+  border-radius: 1px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 1px;
+  transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+}

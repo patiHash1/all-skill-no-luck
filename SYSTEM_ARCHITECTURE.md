@@ -21,8 +21,8 @@ The app is intentionally **serverless and offline-capable** — all state persis
 | **UI Framework** | React | 19 | Functional components only, no class components |
 | **Build Tool** | Vite | 7 (rolldown) | `@tailwindcss/vite` plugin for CSS |
 | **Styling** | Tailwind CSS | v4 | `@theme` tokens, no utility classes in JSX |
-| **State** | React Context API | — | `PredictionContext` — no Redux/Zustand |
-| **Persistence** | localStorage | — | Predictions + username |
+| **State** | React Context API | — | `PredictionContext`, `ThemeContext`, `LiveMatchContext` |
+| **Persistence** | localStorage | — | Predictions + username + theme |
 | **Language** | JavaScript (JSX) | ES2022 | No TypeScript |
 | **Fonts** | Google Fonts | — | Bebas Neue (headings) + Inter (body) |
 | **Icons** | Unicode emoji | — | Flags, sport icons — no icon library |

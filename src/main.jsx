@@ -2,6 +2,7 @@ import { StrictMode, useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { PredictionProvider } from './context/PredictionContext';
 import { ThemeProvider } from './context/ThemeContext';
+import { LiveMatchProvider } from './context/LiveMatchContext';
 import Navbar from './components/Navbar';
 import Loader from './components/Loader';
 import Home from './sections/Home';
@@ -25,13 +26,15 @@ function App() {
   return (
     <ThemeProvider>
       <PredictionProvider>
-        <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
-        <main>
-          {activeTab === 'home'        && <Home onPredict={() => setActiveTab('predict')} />}
-          {activeTab === 'predict'     && <Predict />}
-          {activeTab === 'leaderboard' && <Leaderboard />}
-          {activeTab === 'results'     && <Results />}
-        </main>
+        <LiveMatchProvider>
+          <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
+          <main>
+            {activeTab === 'home'        && <Home onPredict={() => setActiveTab('predict')} />}
+            {activeTab === 'predict'     && <Predict />}
+            {activeTab === 'leaderboard' && <Leaderboard />}
+            {activeTab === 'results'     && <Results />}
+          </main>
+        </LiveMatchProvider>
       </PredictionProvider>
     </ThemeProvider>
   );

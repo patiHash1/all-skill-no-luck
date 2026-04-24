@@ -22,7 +22,14 @@
     "theme": "Tema",
     "theme_dark": "Oscuro",
     "theme_light": "Claro",
-    "language": "Idioma"
+    "language": "Idioma",
+    "account": "Cuenta",
+    "login": "Iniciar Sesión",
+    "logout": "Cerrar Sesión",
+    "username": "Usuario",
+    "password": "Contraseña",
+    "google_login": "Iniciar sesión con Google",
+    "logged_in_as": "Sesión iniciada como"
   },
   "stats": {
     "title": "Estadísticas",
@@ -53,7 +60,9 @@
     "btn_predict": "Hacer una Profecía →",
     "recent_prophecies": "Tus Profecías Recientes",
     "highlights": "Momentos Destacados",
-    "view_all": "Ver Todo →"
+    "view_all": "Ver Todo →",
+    "next_match": "Próximo Partido",
+    "kickoff": "Inicio"
   },
   "highlights": {
     "arg_2022": "Argentina consigue su tercera estrella tras una emocionante final contra Francia.",
@@ -76,6 +85,8 @@
     "label": "Ranking",
     "title": "Clasificación",
     "sub": "Las puntuaciones se actualizarán en vivo a medida que se jueguen los partidos",
+    "restricted_title": "Acceso Restringido",
+    "restricted_desc": "Por favor, inicia sesión en el menú de Configuración (⚙️) para ver la clasificación global.",
     "prompt_label": "Ingresa tu nombre para unirte a la clasificación",
     "prompt_placeholder": "ej. FanFutbol99",
     "prompt_btn": "Unirse a la Clasificación",

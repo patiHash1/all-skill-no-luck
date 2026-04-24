@@ -25,7 +25,7 @@ export function PredictionProvider({ children }) {
   });
 
   const [username, setUsername] = useState(() => {
-    return localStorage.getItem('fifa2026_username') || '';
+    return localStorage.getItem('fifa2026_username') || 'DummyUser99';
   });
 
   const [userScore] = useState(() => {
