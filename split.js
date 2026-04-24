@@ -1,4 +1,4 @@
-/* eslint-env node */
+/* eslint-disable no-undef */
 const fs = require('fs');
 const css = fs.readFileSync('src/styles/components.css', 'utf8').split('\n');
 
