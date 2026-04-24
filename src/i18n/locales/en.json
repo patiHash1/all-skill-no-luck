@@ -3,19 +3,21 @@
     "eyebrow": "FIFA World Cup 2026",
     "title1": "ALL SKILL",
     "title2": "NO LUCK",
-    "sub": "Give Your Prophecy"
+    "sub": "Make Your Prediction"
   },
   "nav": {
     "brand_prefix": "ALL SKILL",
     "brand_accent": "NO LUCK",
     "home": "Home",
-    "predict": "Prophesy",
+    "fixtures": "Fixtures & Stats",
+    "predict": "Predict",
     "leaderboard": "Leaderboard",
-    "results": "Prophecies",
+    "results": "Predictions",
     "home_short": "Home",
-    "predict_short": "Prophesy",
+    "fixtures_short": "Fixtures",
+    "predict_short": "Predict",
     "leaderboard_short": "Rankings",
-    "results_short": "Prophecies"
+    "results_short": "Predictions"
   },
   "settings": {
     "title": "Settings",
@@ -40,14 +42,18 @@
     "unavailable": "Stats unavailable for this team.",
     "form_w": "W",
     "form_d": "D",
-    "form_l": "L"
+    "form_l": "L",
+    "coach": "Head Coach",
+    "starters": "Starting XI",
+    "subs": "Substitutes",
+    "tactic": "Preferred Tactic"
   },
   "home": {
-    "badge": "Official Prophecy Game",
+    "badge": "Official Prediction Game",
     "title_line1": "FIFA",
     "title_line2": "WORLD",
     "title_line3": "CUP 2026",
-    "desc": "Give your prophecy for all 48 teams across 12 groups. Compete on the leaderboard and prove you have the gift of football foresight.",
+    "desc": "Make your prediction for all 48 teams across 12 groups. Compete on the leaderboard and prove you have the gift of football foresight.",
     "tournament_starts": "Tournament starts in",
     "days": "Days",
     "hours": "Hours",
@@ -56,13 +62,20 @@
     "stats_teams": "Teams",
     "stats_groups": "Groups",
     "stats_matches": "Matches",
-    "stats_prophecies": "Prophecies",
-    "btn_predict": "Give a Prophecy →",
-    "recent_prophecies": "Your Recent Prophecies",
+    "stats_prophecies": "Predictions",
+    "btn_predict": "Make a Prediction →",
+    "recent_prophecies": "Your Recent Predictions",
+    "probable_fixtures": "Probable Fixtures",
     "highlights": "World Cup Highlights",
     "view_all": "View All →",
     "next_match": "Next Match",
     "kickoff": "Kickoff"
+  },
+  "fixtures": {
+    "title": "Fixtures & Stats",
+    "sub": "Select a group to view all matches and team rosters",
+    "standings": "Group Standings",
+    "team": "Team"
   },
   "highlights": {
     "arg_2022": "Argentina secures their third star after a thrilling final against France.",
@@ -71,15 +84,17 @@
     "esp_2010": "Spain's tiki-taka dominance culminates in their first ever World Cup title."
   },
   "predict": {
-    "label": "Group Stage Prophecies",
-    "title": "Give Your Prophecy",
+    "label": "Group Stage Predictions",
+    "title": "Make Your Prediction",
     "sub_part1": "",
-    "sub_part2": " / 72 prophecies given — select a group to get started",
+    "sub_part2": " / 72 predictions made — select a group to get started",
     "group": "GROUP",
-    "prophesied": "prophesied",
+    "prophesied": "predicted",
     "vs": "VS",
     "win": "Win",
-    "draw": "Draw"
+    "draw": "Draw",
+    "locked": "LOCKED",
+    "locked_msg": "Predictions Locked"
   },
   "leaderboard": {
     "label": "Rankings",
@@ -96,30 +111,31 @@
     "col_progress": "Progress",
     "you": "YOU",
     "pts": "pts",
-    "footer": "⚡ Points are awarded when official results are published — your prophecies will be judged."
+    "footer": "⚡ Points are awarded when official results are published — your predictions will be judged."
   },
   "results": {
-    "label": "Your Prophecies",
-    "title": "Prophecies",
-    "empty_text": "You haven't given any prophecies yet.",
+    "label": "Your Predictions",
+    "title": "Predictions",
+    "empty_text": "You haven't made any predictions yet.",
     "empty_sub1": "Head to the ",
-    "empty_sub_strong": "Prophesy",
+    "empty_sub_strong": "Predict",
     "empty_sub2": " tab to start picking winners.",
-    "sub": "Your prophecies are sealed — scores update after matches are played",
-    "card_given": "Prophecies Given",
+    "sub": "Your predictions are sealed — scores update after matches are played",
+    "active_predictions": "Make Your Predictions",
+    "card_given": "Predictions Made",
     "card_remaining": "Remaining",
     "card_complete": "Complete",
     "card_score": "Score (pending)",
     "progress_text1": "",
     "progress_text2": " of ",
-    "progress_text3": " group stage prophecies given",
+    "progress_text3": " group stage predictions made",
     "group": "Group",
-    "prophecies_given": "prophecies given",
+    "prophecies_given": "predictions made",
     "vs": "vs",
     "win": "Win",
     "draw": "Draw",
-    "clear_confirm": "Clear all prophecies? This cannot be undone.",
-    "clear_btn": "🗑 Clear All Prophecies"
+    "clear_confirm": "Clear all predictions? This cannot be undone.",
+    "clear_btn": "🗑 Clear All Predictions"
   },
   "teams": {
     "United States": "United States",

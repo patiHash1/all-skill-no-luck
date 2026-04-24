@@ -37,14 +37,8 @@ export default function Home({ onPredict }) {
   
   const [selectedTeam, setSelectedTeam] = useState(null);
 
-  // Get up to 3 recent predictions
-  const recentPredictions = Object.entries(predictions)
-    .slice(-3)
-    .map(([matchId, pick]) => {
-      const match = ALL_MATCHES.find((m) => m.id === matchId);
-      return { match, pick };
-    })
-    .filter((item) => item.match); // ensure match exists
+  // Get a few probable upcoming fixtures for the home page
+  const probableFixtures = ALL_MATCHES.slice(0, 4);
 
   const livePrediction = predictions[liveMatch.id];
   const homeName = t(`teams.${liveMatch.home}`, liveMatch.home);
@@ -157,47 +151,55 @@ export default function Home({ onPredict }) {
         />
       )}
 
-      {/* ── Recent Prophecies Section ── */}
-      {recentPredictions.length > 0 && (
-        <div className="home-section">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '1rem' }}>
-            <h2 className="home-section-title" style={{ marginBottom: 0 }}>{t('home.recent_prophecies')}</h2>
-          </div>
-          <div className="match-grid">
-            {recentPredictions.map(({ match, pick }) => {
-              const homeName = t(`teams.${match.home}`, match.home);
-              const awayName = t(`teams.${match.away}`, match.away);
-              
-              return (
-                <div key={match.id} className="match-card" style={{ opacity: 0.9 }}>
-                  <div className="match-teams">
-                    <div className="team-col">
-                      <span className="team-flag"><FlagIcon team={match.home} /></span>
-                      <span className="team-name">{homeName}</span>
-                    </div>
-                    <span className="vs-label">VS</span>
-                    <div className="team-col">
-                      <span className="team-flag"><FlagIcon team={match.away} /></span>
-                      <span className="team-name">{awayName}</span>
-                    </div>
+      {/* ── Probable Fixtures Section ── */}
+      <div className="home-section">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '1rem' }}>
+          <h2 className="home-section-title" style={{ marginBottom: 0 }}>{t('home.probable_fixtures', 'Probable Fixtures')}</h2>
+        </div>
+        <div className="match-grid">
+          {probableFixtures.map((match) => {
+            const homeName = t(`teams.${match.home}`, match.home);
+            const awayName = t(`teams.${match.away}`, match.away);
+            const pick = predictions[match.id];
+            
+            return (
+              <div key={match.id} className="match-card">
+                <div className="match-teams">
+                  <div className="team-col" onClick={() => setSelectedTeam(match.home)} style={{ cursor: 'pointer' }}>
+                    <span className="team-flag"><FlagIcon team={match.home} /></span>
+                    <span className="team-name">{homeName}</span>
                   </div>
-                  <div className="pick-row">
-                    <button className={`pick-btn ${pick === 'home' ? 'picked' : ''}`} disabled>
-                      {homeName.split(' ')[0]} {t('predict.win')}
-                    </button>
-                    <button className={`pick-btn ${pick === 'draw' ? 'picked' : ''}`} disabled>
-                      {t('predict.draw')}
-                    </button>
-                    <button className={`pick-btn ${pick === 'away' ? 'picked' : ''}`} disabled>
-                      {awayName.split(' ')[0]} {t('predict.win')}
-                    </button>
+                  <span className="vs-label">VS</span>
+                  <div className="team-col" onClick={() => setSelectedTeam(match.away)} style={{ cursor: 'pointer' }}>
+                    <span className="team-flag"><FlagIcon team={match.away} /></span>
+                    <span className="team-name">{awayName}</span>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+                <div className="pick-row">
+                  <button 
+                    className={`pick-btn ${pick === 'home' ? 'picked' : ''}`} 
+                    onClick={() => setPrediction(match.id, 'home')}
+                  >
+                    {homeName.split(' ')[0]} {t('predict.win')}
+                  </button>
+                  <button 
+                    className={`pick-btn ${pick === 'draw' ? 'picked' : ''}`} 
+                    onClick={() => setPrediction(match.id, 'draw')}
+                  >
+                    {t('predict.draw')}
+                  </button>
+                  <button 
+                    className={`pick-btn ${pick === 'away' ? 'picked' : ''}`} 
+                    onClick={() => setPrediction(match.id, 'away')}
+                  >
+                    {awayName.split(' ')[0]} {t('predict.win')}
+                  </button>
+                </div>
+              </div>
+            );
+          })}
         </div>
-      )}
+      </div>
 
       {/* ── World Cup Highlights Section ── */}
       <div className="home-section">

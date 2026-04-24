@@ -1,17 +1,24 @@
 import { GROUPS } from '../data/groups';
 import FlagIcon from '../components/FlagIcon';
-import { MATCHES_BY_GROUP } from '../data/matches';
 import { usePredictions } from '../context/PredictionContext';
+import { useLiveMatch } from '../context/LiveMatchContext';
 import { useTranslation } from 'react-i18next';
+import { ALL_MATCHES, MATCHES_BY_GROUP } from '../data/matches';
 import '../styles/results.css';
+import '../styles/predict.css';
 
 const CHIP_CLASS = { home: 'chip-home', draw: 'chip-draw', away: 'chip-away' };
 
 
 export default function Results() {
-  const { predictions, predictionCount, clearPredictions } = usePredictions();
+  const { predictions, setPrediction, predictionCount, clearPredictions } = usePredictions();
+  const { liveMatch, isLocked } = useLiveMatch();
   const { t } = useTranslation();
   const total = 72;
+
+  // Rule: 1 week to 10 minutes before
+  // For this mock, we'll show the liveMatch + next 5 matches
+  const upcomingMatches = ALL_MATCHES.slice(0, 6);
 
   const CHIP_LABEL = {
     home: (m) => <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><FlagIcon team={m.home} /> {t(`teams.${m.home}`, m.home).split(' ')[0]} {t('results.win')}</span>,
@@ -19,27 +26,72 @@ export default function Results() {
     away: (m)  => <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><FlagIcon team={m.away} /> {t(`teams.${m.away}`, m.away).split(' ')[0]} {t('results.win')}</span>,
   };
 
-  if (predictionCount === 0) {
-    return (
-      <div className="page">
-        <p className="section-label">{t('results.label')}</p>
-        <h1 className="page-title">{t('results.title')}</h1>
-        <div className="empty-state">
-          <span className="empty-icon">🔮</span>
-          <p className="empty-text">{t('results.empty_text')}</p>
-          <p style={{ fontSize: '0.8rem', color: 'var(--color-muted)' }}>
-            {t('results.empty_sub1')}<strong>{t('results.empty_sub_strong')}</strong>{t('results.empty_sub2')}
-          </p>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="page">
       <p className="section-label">{t('results.label')}</p>
       <h1 className="page-title">{t('results.title')}</h1>
       <p className="page-sub">{t('results.sub')}</p>
+
+      {/* ── Active Predictions (NEW) ── */}
+      <div style={{ marginTop: '2rem', marginBottom: '3rem' }}>
+        <h2 className="results-group-title" style={{ marginBottom: '1.5rem', border: 'none' }}>
+          🔥 {t('results.active_predictions', 'Make Your Predictions')}
+        </h2>
+        <div className="match-grid">
+          {upcomingMatches.map((match) => {
+            const homeName = t(`teams.${match.home}`, match.home);
+            const awayName = t(`teams.${match.away}`, match.away);
+            const pick = predictions[match.id];
+            // Only the very first match uses the LiveMatchContext lock logic for demo
+            const locked = match.id === liveMatch.id ? isLocked : false;
+
+            return (
+              <div key={match.id} className={`match-card ${locked ? 'locked' : ''}`}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.65rem', color: 'var(--color-muted-2)', marginBottom: '0.5rem', textTransform: 'uppercase' }}>
+                  <span>{match.date} • {match.time}</span>
+                  {locked && <span style={{ color: 'var(--color-accent)', fontWeight: 700 }}>{t('predict.locked')}</span>}
+                </div>
+                <div className="match-teams">
+                  <div className="team-col">
+                    <span className="team-flag"><FlagIcon team={match.home} /></span>
+                    <span className="team-name">{homeName}</span>
+                  </div>
+                  <span className="vs-label">VS</span>
+                  <div className="team-col">
+                    <span className="team-flag"><FlagIcon team={match.away} /></span>
+                    <span className="team-name">{awayName}</span>
+                  </div>
+                </div>
+                <div className="pick-row">
+                  <button 
+                    className={`pick-btn ${pick === 'home' ? 'picked' : ''}`} 
+                    onClick={() => setPrediction(match.id, 'home')}
+                    disabled={locked}
+                  >
+                    {t('results.win')}
+                  </button>
+                  <button 
+                    className={`pick-btn ${pick === 'draw' ? 'picked' : ''}`} 
+                    onClick={() => setPrediction(match.id, 'draw')}
+                    disabled={locked}
+                  >
+                    {t('results.draw')}
+                  </button>
+                  <button 
+                    className={`pick-btn ${pick === 'away' ? 'picked' : ''}`} 
+                    onClick={() => setPrediction(match.id, 'away')}
+                    disabled={locked}
+                  >
+                    {t('results.win')}
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <hr style={{ opacity: 0.1, margin: '3rem 0' }} />
 
       {/* Summary cards */}
       <div className="results-summary">
