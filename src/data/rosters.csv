@@ -1,0 +1,273 @@
+Team,Role,Name
+Argentina,Coach,Lionel Scaloni
+Argentina,Starter,Emi Martínez
+Argentina,Starter,Nahuel Molina
+Argentina,Starter,Cristian Romero
+Argentina,Starter,Nicolás Otamendi
+Argentina,Starter,Nicolás Tagliafico
+Argentina,Starter,Rodrigo De Paul
+Argentina,Starter,Enzo Fernández
+Argentina,Starter,Alexis Mac Allister
+Argentina,Starter,Lionel Messi
+Argentina,Starter,Julián Álvarez
+Argentina,Starter,Ángel Di María
+Argentina,Sub,Gerónimo Rulli
+Argentina,Sub,Gonzalo Montiel
+Argentina,Sub,Lisandro Martínez
+Argentina,Sub,Leandro Paredes
+Argentina,Sub,Lautaro Martínez
+France,Coach,Didier Deschamps
+France,Starter,Mike Maignan
+France,Starter,Jules Koundé
+France,Starter,William Saliba
+France,Starter,Dayot Upamecano
+France,Starter,Theo Hernández
+France,Starter,Aurélien Tchouaméni
+France,Starter,Adrien Rabiot
+France,Starter,Antoine Griezmann
+France,Starter,Ousmane Dembélé
+France,Starter,Kylian Mbappé
+France,Starter,Marcus Thuram
+France,Sub,Brice Samba
+France,Sub,Benjamin Pavard
+France,Sub,Eduardo Camavinga
+France,Sub,Kingsley Coman
+France,Sub,Randal Kolo Muani
+Brazil,Coach,Dorival Júnior
+Brazil,Starter,Alisson Becker
+Brazil,Starter,Danilo
+Brazil,Starter,Marquinhos
+Brazil,Starter,Éder Militão
+Brazil,Starter,Wendell
+Brazil,Starter,Bruno Guimarães
+Brazil,Starter,Lucas Paquetá
+Brazil,Starter,João Gomes
+Brazil,Starter,Raphinha
+Brazil,Starter,Rodrygo
+Brazil,Starter,Vinícius Júnior
+Brazil,Sub,Ederson
+Brazil,Sub,Gabriel Magalhães
+Brazil,Sub,Douglas Luiz
+Brazil,Sub,Endrick
+Brazil,Sub,Gabriel Martinelli
+England,Coach,Gareth Southgate
+England,Starter,Jordan Pickford
+England,Starter,Kyle Walker
+England,Starter,John Stones
+England,Starter,Marc Guéhi
+England,Starter,Luke Shaw
+England,Starter,Declan Rice
+England,Starter,Kobbie Mainoo
+England,Starter,Jude Bellingham
+England,Starter,Bukayo Saka
+England,Starter,Phil Foden
+England,Starter,Harry Kane
+England,Sub,Aaron Ramsdale
+England,Sub,Trent Alexander-Arnold
+England,Sub,Conor Gallagher
+England,Sub,Cole Palmer
+England,Sub,Ollie Watkins
+Spain,Coach,Luis de la Fuente
+Spain,Starter,Unai Simón
+Spain,Starter,Dani Carvajal
+Spain,Starter,Robin Le Normand
+Spain,Starter,Aymeric Laporte
+Spain,Starter,Marc Cucurella
+Spain,Starter,Rodri
+Spain,Starter,Fabián Ruiz
+Spain,Starter,Pedri
+Spain,Starter,Lamine Yamal
+Spain,Starter,Nico Williams
+Spain,Starter,Álvaro Morata
+Spain,Sub,David Raya
+Spain,Sub,Nacho
+Spain,Sub,Mikel Merino
+Spain,Sub,Dani Olmo
+Spain,Sub,Joselu
+Germany,Coach,Julian Nagelsmann
+Germany,Starter,Manuel Neuer
+Germany,Starter,Joshua Kimmich
+Germany,Starter,Antonio Rüdiger
+Germany,Starter,Jonathan Tah
+Germany,Starter,Maximilian Mittelstädt
+Germany,Starter,Robert Andrich
+Germany,Starter,Toni Kroos
+Germany,Starter,İlkay Gündoğan
+Germany,Starter,Jamal Musiala
+Germany,Starter,Florian Wirtz
+Germany,Starter,Kai Havertz
+Germany,Sub,Marc-André ter Stegen
+Germany,Sub,Nico Schlotterbeck
+Germany,Sub,Pascal Groß
+Germany,Sub,Leroy Sané
+Germany,Sub,Niclas Füllkrug
+United States,Coach,Gregg Berhalter
+United States,Starter,Matt Turner
+United States,Starter,Sergiño Dest
+United States,Starter,Chris Richards
+United States,Starter,Tim Ream
+United States,Starter,Antonee Robinson
+United States,Starter,Tyler Adams
+United States,Starter,Weston McKennie
+United States,Starter,Yunus Musah
+United States,Starter,Timothy Weah
+United States,Starter,Christian Pulisic
+United States,Starter,Folarin Balogun
+United States,Sub,Ethan Horvath
+United States,Sub,Cameron Carter-Vickers
+United States,Sub,Gio Reyna
+United States,Sub,Brenden Aaronson
+United States,Sub,Ricardo Pepi
+Mexico,Coach,Jaime Lozano
+Mexico,Starter,Guillermo Ochoa
+Mexico,Starter,Jorge Sánchez
+Mexico,Starter,César Montes
+Mexico,Starter,Johan Vásquez
+Mexico,Starter,Jesús Gallardo
+Mexico,Starter,Edson Álvarez
+Mexico,Starter,Luis Chávez
+Mexico,Starter,Erick Sánchez
+Mexico,Starter,Uriel Antuna
+Mexico,Starter,Hirving Lozano
+Mexico,Starter,Santiago Giménez
+Mexico,Sub,Luis Malagón
+Mexico,Sub,Israel Reyes
+Mexico,Sub,Luis Romo
+Mexico,Sub,Orbelín Pineda
+Mexico,Sub,Henry Martín
+Japan,Coach,Hajime Moriyasu
+Japan,Starter,Zion Suzuki
+Japan,Starter,Yukinari Sugawara
+Japan,Starter,Ko Itakura
+Japan,Starter,Takehiro Tomiyasu
+Japan,Starter,Hiroki Ito
+Japan,Starter,Wataru Endo
+Japan,Starter,Hidemasa Morita
+Japan,Starter,Takefusa Kubo
+Japan,Starter,Junya Ito
+Japan,Starter,Kaoru Mitoma
+Japan,Starter,Ayase Ueda
+Japan,Sub,Daniel Schmidt
+Japan,Sub,Shogo Taniguchi
+Japan,Sub,Ao Tanaka
+Japan,Sub,Takumi Minamino
+Japan,Sub,Takuma Asano
+Morocco,Coach,Walid Regragui
+Morocco,Starter,Yassine Bounou
+Morocco,Starter,Achraf Hakimi
+Morocco,Starter,Nayef Aguerd
+Morocco,Starter,Romain Saïss
+Morocco,Starter,Noussair Mazraoui
+Morocco,Starter,Sofyan Amrabat
+Morocco,Starter,Azzedine Ounahi
+Morocco,Starter,Selim Amallah
+Morocco,Starter,Hakim Ziyech
+Morocco,Starter,Sofiane Boufal
+Morocco,Starter,Youssef En-Nesyri
+Morocco,Sub,Munir Mohamedi
+Morocco,Sub,Yahia Attiyat Allah
+Morocco,Sub,Bilal El Khannouss
+Morocco,Sub,Abde Ezzalzouli
+Morocco,Sub,Ayoub El Kaabi
+Croatia,Coach,Zlatko Dalić
+Croatia,Starter,Dominik Livaković
+Croatia,Starter,Josip Juranović
+Croatia,Starter,Josip Šutalo
+Croatia,Starter,Joško Gvardiol
+Croatia,Starter,Borna Sosa
+Croatia,Starter,Marcelo Brozović
+Croatia,Starter,Luka Modrić
+Croatia,Starter,Mateo Kovačić
+Croatia,Starter,Mario Pašalić
+Croatia,Starter,Andrej Kramarić
+Croatia,Starter,Bruno Petković
+Croatia,Sub,Ivica Ivušić
+Croatia,Sub,Domagoj Vida
+Croatia,Sub,Lovro Majer
+Croatia,Sub,Luka Ivanušec
+Croatia,Sub,Ante Budimir
+Netherlands,Coach,Ronald Koeman
+Netherlands,Starter,Bart Verbruggen
+Netherlands,Starter,Denzel Dumfries
+Netherlands,Starter,Stefan de Vrij
+Netherlands,Starter,Virgil van Dijk
+Netherlands,Starter,Nathan Aké
+Netherlands,Starter,Jerdy Schouten
+Netherlands,Starter,Joey Veerman
+Netherlands,Starter,Tijjani Reijnders
+Netherlands,Starter,Xavi Simons
+Netherlands,Starter,Cody Gakpo
+Netherlands,Starter,Memphis Depay
+Netherlands,Sub,Mark Flekken
+Netherlands,Sub,Matthijs de Ligt
+Netherlands,Sub,Georginio Wijnaldum
+Netherlands,Sub,Donyell Malen
+Netherlands,Sub,Wout Weghorst
+Portugal,Coach,Roberto Martínez
+Portugal,Starter,Diogo Costa
+Portugal,Starter,João Cancelo
+Portugal,Starter,Rúben Dias
+Portugal,Starter,Pepe
+Portugal,Starter,Nuno Mendes
+Portugal,Starter,João Palhinha
+Portugal,Starter,Vitinha
+Portugal,Starter,Bruno Fernandes
+Portugal,Starter,Bernardo Silva
+Portugal,Starter,Rafael Leão
+Portugal,Starter,Cristiano Ronaldo
+Portugal,Sub,Rui Patrício
+Portugal,Sub,António Silva
+Portugal,Sub,Rúben Neves
+Portugal,Sub,Diogo Jota
+Portugal,Sub,Gonçalo Ramos
+Italy,Coach,Luciano Spalletti
+Italy,Starter,Gianluigi Donnarumma
+Italy,Starter,Giovanni Di Lorenzo
+Italy,Starter,Alessandro Bastoni
+Italy,Starter,Riccardo Calafiori
+Italy,Starter,Federico Dimarco
+Italy,Starter,Jorginho
+Italy,Starter,Nicolò Barella
+Italy,Starter,Davide Frattesi
+Italy,Starter,Lorenzo Pellegrini
+Italy,Starter,Federico Chiesa
+Italy,Starter,Gianluca Scamacca
+Italy,Sub,Guglielmo Vicario
+Italy,Sub,Gianluca Mancini
+Italy,Sub,Bryan Cristante
+Italy,Sub,Stephan El Shaarawy
+Italy,Sub,Mateo Retegui
+Senegal,Coach,Aliou Cissé
+Senegal,Starter,Édouard Mendy
+Senegal,Starter,Krépin Diatta
+Senegal,Starter,Kalidou Koulibaly
+Senegal,Starter,Abdou Diallo
+Senegal,Starter,Ismail Jakobs
+Senegal,Starter,Nampalys Mendy
+Senegal,Starter,Pape Matar Sarr
+Senegal,Starter,Idrissa Gueye
+Senegal,Starter,Ismaïla Sarr
+Senegal,Starter,Sadio Mané
+Senegal,Starter,Boulaye Dia
+Senegal,Sub,Seny Dieng
+Senegal,Sub,Moussa Niakhaté
+Senegal,Sub,Cheikhou Kouyaté
+Senegal,Sub,Iliman Ndiaye
+Senegal,Sub,Nicolas Jackson
+South Korea,Coach,Jürgen Klinsmann
+South Korea,Starter,Jo Hyeon-woo
+South Korea,Starter,Kim Tae-hwan
+South Korea,Starter,Kim Min-jae
+South Korea,Starter,Kim Young-gwon
+South Korea,Starter,Seol Young-woo
+South Korea,Starter,Park Yong-woo
+South Korea,Starter,Hwang In-beom
+South Korea,Starter,Lee Kang-in
+South Korea,Starter,Lee Jae-sung
+South Korea,Starter,Hwang Hee-chan
+South Korea,Starter,Son Heung-min
+South Korea,Sub,Song Bum-keun
+South Korea,Sub,Jung Seung-hyun
+South Korea,Sub,Hong Hyun-seok
+South Korea,Sub,Jeong Woo-yeong
+South Korea,Sub,Cho Gue-sung

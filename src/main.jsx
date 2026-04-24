@@ -6,7 +6,7 @@ import { LiveMatchProvider } from './context/LiveMatchContext';
 import Navbar from './components/Navbar';
 import Loader from './components/Loader';
 import Home from './sections/Home';
-import Predict from './sections/Predict';
+import Fixtures from './sections/Fixtures';
 import Leaderboard from './sections/Leaderboard';
 import Results from './sections/Results';
 import './index.css';
@@ -29,8 +29,8 @@ function App() {
         <LiveMatchProvider>
           <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
           <main>
-            {activeTab === 'home'        && <Home onPredict={() => setActiveTab('predict')} />}
-            {activeTab === 'predict'     && <Predict />}
+            {activeTab === 'home'        && <Home onPredict={() => setActiveTab('fixtures')} />}
+            {activeTab === 'fixtures'    && <Fixtures />}
             {activeTab === 'leaderboard' && <Leaderboard />}
             {activeTab === 'results'     && <Results />}
           </main>

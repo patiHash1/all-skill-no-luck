@@ -4,9 +4,9 @@ import SettingsModal from './SettingsModal';
 
 const TABS = [
   { id: 'home',        icon: '🏠', labelKey: 'nav.home',         shortLabelKey: 'nav.home_short' },
-  { id: 'predict',     icon: '⚽', labelKey: 'nav.predict',      shortLabelKey: 'nav.predict_short' },
-  { id: 'leaderboard', icon: '🏆', labelKey: 'nav.leaderboard',   shortLabelKey: 'nav.leaderboard_short' },
-  { id: 'results',     icon: '🔮', labelKey: 'nav.results',    shortLabelKey: 'nav.results_short' },
+  { id: 'fixtures',    icon: '📅', labelKey: 'nav.fixtures',     shortLabelKey: 'nav.fixtures_short' },
+  { id: 'leaderboard', icon: '🏆', labelKey: 'nav.leaderboard',  shortLabelKey: 'nav.leaderboard_short' },
+  { id: 'results',     icon: '🔮', labelKey: 'nav.results',      shortLabelKey: 'nav.results_short' },
 ];
 
 export default function Navbar({ activeTab, setActiveTab }) {

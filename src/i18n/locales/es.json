@@ -3,19 +3,21 @@
     "eyebrow": "Copa Mundial de la FIFA 2026",
     "title1": "PURA HABILIDAD",
     "title2": "NADA DE SUERTE",
-    "sub": "Haz tu Profecía"
+    "sub": "Haz tu Predicción"
   },
   "nav": {
     "brand_prefix": "PURA HABILIDAD",
     "brand_accent": "NADA DE SUERTE",
     "home": "Inicio",
-    "predict": "Profetizar",
+    "fixtures": "Partidos y Stats",
+    "predict": "Predecir",
     "leaderboard": "Clasificación",
-    "results": "Profecías",
+    "results": "Predicciones",
     "home_short": "Inicio",
-    "predict_short": "Profetizar",
+    "fixtures_short": "Partidos",
+    "predict_short": "Predecir",
     "leaderboard_short": "Ranking",
-    "results_short": "Profecías"
+    "results_short": "Predicciones"
   },
   "settings": {
     "title": "Configuración",
@@ -40,14 +42,18 @@
     "unavailable": "Estadísticas no disponibles.",
     "form_w": "G",
     "form_d": "E",
-    "form_l": "P"
+    "form_l": "P",
+    "coach": "Entrenador",
+    "starters": "Titulares",
+    "subs": "Suplentes",
+    "tactic": "Táctica Preferida"
   },
   "home": {
-    "badge": "Juego Oficial de Profecías",
+    "badge": "Juego Oficial de Predicciones",
     "title_line1": "COPA",
     "title_line2": "MUNDIAL",
     "title_line3": "FIFA 2026",
-    "desc": "Haz tu profecía para los 48 equipos en 12 grupos. Compite en la clasificación y demuestra que tienes el don de la clarividencia futbolística.",
+    "desc": "Haz tu predicción para los 48 equipos en 12 grupos. Compite en la clasificación y demuestra que tienes el don de la clarividencia futbolística.",
     "tournament_starts": "El torneo comienza en",
     "days": "Días",
     "hours": "Horas",
@@ -56,13 +62,20 @@
     "stats_teams": "Equipos",
     "stats_groups": "Grupos",
     "stats_matches": "Partidos",
-    "stats_prophecies": "Profecías",
-    "btn_predict": "Hacer una Profecía →",
-    "recent_prophecies": "Tus Profecías Recientes",
+    "stats_prophecies": "Predicciones",
+    "btn_predict": "Hacer una Predicción →",
+    "recent_prophecies": "Tus Predicciones Recientes",
+    "probable_fixtures": "Partidos Probables",
     "highlights": "Momentos Destacados",
     "view_all": "Ver Todo →",
     "next_match": "Próximo Partido",
     "kickoff": "Inicio"
+  },
+  "fixtures": {
+    "title": "Partidos y Estadísticas",
+    "sub": "Selecciona un grupo para ver todos los partidos y plantillas",
+    "standings": "Clasificación del Grupo",
+    "team": "Equipo"
   },
   "highlights": {
     "arg_2022": "Argentina consigue su tercera estrella tras una emocionante final contra Francia.",
@@ -71,15 +84,17 @@
     "esp_2010": "El dominio del tiki-taka de España culmina en su primer título Mundial."
   },
   "predict": {
-    "label": "Profecías de la Fase de Grupos",
-    "title": "Haz tu Profecía",
+    "label": "Predicciones de la Fase de Grupos",
+    "title": "Haz tu Predicción",
     "sub_part1": "",
-    "sub_part2": " / 72 profecías hechas — selecciona un grupo para empezar",
+    "sub_part2": " / 72 predicciones hechas — selecciona un grupo para empezar",
     "group": "GRUPO",
-    "prophesied": "profetizados",
+    "prophesied": "predichos",
     "vs": "VS",
     "win": "Gana",
-    "draw": "Empate"
+    "draw": "Empate",
+    "locked": "BLOQUEADO",
+    "locked_msg": "Predicciones Bloqueadas"
   },
   "leaderboard": {
     "label": "Ranking",
@@ -96,30 +111,31 @@
     "col_progress": "Progreso",
     "you": "TÚ",
     "pts": "pts",
-    "footer": "⚡ Los puntos se otorgan cuando se publican los resultados oficiales — tus profecías serán juzgadas."
+    "footer": "⚡ Los puntos se otorgan cuando se publican los resultados oficiales — tus predicciones serán juzgadas."
   },
   "results": {
-    "label": "Tus Profecías",
-    "title": "Profecías",
-    "empty_text": "Aún no has hecho ninguna profecía.",
+    "label": "Tus Predicciones",
+    "title": "Predicciones",
+    "empty_text": "Aún no has hecho ninguna predicción.",
     "empty_sub1": "Dirígete a la pestaña ",
-    "empty_sub_strong": "Profetizar",
+    "empty_sub_strong": "Predecir",
     "empty_sub2": " para empezar a elegir ganadores.",
-    "sub": "Tus profecías están selladas — las puntuaciones se actualizan después de los partidos",
-    "card_given": "Profecías Hechas",
+    "sub": "Tus predicciones están selladas — las puntuaciones se actualizan después de los partidos",
+    "active_predictions": "Haz tus Predicciones",
+    "card_given": "Predicciones Hechas",
     "card_remaining": "Restantes",
     "card_complete": "Completado",
     "card_score": "Puntuación (pendiente)",
     "progress_text1": "",
     "progress_text2": " de ",
-    "progress_text3": " profecías de fase de grupos hechas",
+    "progress_text3": " predicciones de fase de grupos hechas",
     "group": "Grupo",
-    "prophecies_given": "profecías hechas",
+    "prophecies_given": "predicciones hechas",
     "vs": "vs",
     "win": "Gana",
     "draw": "Empate",
-    "clear_confirm": "¿Borrar todas las profecías? Esto no se puede deshacer.",
-    "clear_btn": "🗑 Borrar Todas las Profecías"
+    "clear_confirm": "¿Borrar todas las predicciones? Esto no se puede deshacer.",
+    "clear_btn": "🗑 Borrar Todas las Predicciones"
   },
   "teams": {
     "United States": "Estados Unidos",
