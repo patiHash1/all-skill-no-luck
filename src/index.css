@@ -1,4 +1,11 @@
 @import "tailwindcss";
+
+/* ── Design tokens (colors, fonts) ─────────── */
+@import "./utils/colors.css";
+
+/* ── Base resets & body styles ──────────────── */
 @import "./styles/globals.css";
+
+/* ── Component styles ───────────────────────── */
 @import "./styles/navbar.css";
 @import "./styles/components.css";

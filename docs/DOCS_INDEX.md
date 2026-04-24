@@ -1,76 +1,58 @@
-# Docs — Index & Navigation
+# All Skill No Luck — Docs Index
 
-> Updated: 2026-03-14
+> Updated: 2026-04-24
+> Project: FIFA 2026 World Cup Prophecy Game
 
-Welcome to the portfolio documentation. This folder covers the scroll timeline system, asset management, and localization.
+Welcome to the project documentation. This folder covers the architecture, state management, data layer, and design system for the **All Skill No Luck** FIFA 2026 online prediction game.
 
 ---
 
 ## 📚 Documentation Files
 
-### 1. **IMPLEMENTATION_SUMMARY.md** — Start Here!
+### 1. **IMPLEMENTATION_SUMMARY.md** — Start Here
 **Best for:** Project overview, what was built, current file structure
 
 **Contains:**
-- Section implementations and animation strategies
-- App boot sequence
-- Featured hybrid video preload system
-- Modular CSS architecture
-- Maintenance notes
+- App boot sequence and tab routing
+- Section implementations (Home, Prophesy, Leaderboard, Prophecies)
+- PredictionContext state management pattern
+- CSS architecture and design system notes
+- Maintenance and extension notes
 
 ---
 
-### 2. **scroll_timeline_quick_reference.md** — For Daily Use
-**Best for:** Quick code snippets, common patterns, troubleshooting
+### 2. **ARCHITECTURE_DIAGRAM.md** — Visual Guide
+**Best for:** Visual learners, understanding component hierarchy and data flow
 
 **Contains:**
-- Quick setup guide for new sections
-- Common GSAP animation patterns (copy-paste ready)
-- ScrollTrigger position guide
-- Debugging tips
-
----
-
-### 3. **scroll_timeline_system.md** — Deep Dive
-**Best for:** Understanding architecture, API details, advanced usage
-
-**Contains:**
-- Architecture overview
-- `useSectionScrollProgress` hook API reference
-- Parameter descriptions and examples
-- Performance considerations
-
----
-
-### 4. **ARCHITECTURE_DIAGRAM.md** — Visual Guide
-**Best for:** Visual learners, system architecture understanding
-
-**Contains:**
-- Component hierarchy diagrams
-- Data flow visualization
-- Timeline structure
+- Component hierarchy diagram
+- Data flow visualization (state → UI)
 - File organization tree
-- Dependency graph
+- Context / hooks dependency graph
 
 ---
 
-### 5. **centralizated.md** — Asset Management
-**Best for:** Understanding centralised asset loading via JSON
+### 3. **data_layer.md** — Data & State Guide
+**Best for:** Understanding match data structure and prediction state
 
 **Contains:**
-- JSON structure for images, SVGs, GIFs, videos
-- How to access assets via `useLocale()` (media object)
-- How to add new assets
+- `groups.js` structure (12 groups × 4 teams)
+- `matches.js` auto-generation logic (72 matches)
+- `PredictionContext` API (setPrediction, clearPredictions, usePredictions)
+- localStorage persistence pattern
+- How to extend to knockout stage
 
 ---
 
-### 6. **change_localized_files.md** — i18n Guide
-**Best for:** Adding or changing languages
+### 4. **design_system.md** — Design & CSS Guide
+**Best for:** Adding new components, maintaining visual consistency
 
 **Contains:**
-- Localization file structure (`public/locales/`, `public/media/`)
-- How to switch language via `setLanguageIndex()`
-- How to add a new language
+- Color palette tokens (Goal.com + UEFA + FotMob inspired)
+- Typography scale (Bebas Neue headings + Inter body)
+- Component class reference (cards, chips, buttons, badges)
+- Mobile-first breakpoint strategy
+- How to add a new CSS module
 
 ---
 
@@ -79,88 +61,89 @@ Welcome to the portfolio documentation. This folder covers the scroll timeline s
 ### I want to...
 
 | Goal | Go to |
-|------|-------|
+|---|---|
 | Understand what was built | `IMPLEMENTATION_SUMMARY.md` |
-| Add a new section with scroll animations | `scroll_timeline_quick_reference.md` → "Quick Setup" |
-| Customize existing animations | `scroll_timeline_quick_reference.md` → "Common Patterns" |
-| Understand the architecture | `ARCHITECTURE_DIAGRAM.md` |
-| Debug an animation issue | `scroll_timeline_quick_reference.md` → "Troubleshooting" |
-| Learn all API options | `scroll_timeline_system.md` → "useSectionScrollProgress Hook" |
-| Manage assets | `centralizated.md` |
-| Add a language | `change_localized_files.md` |
+| See how components connect | `ARCHITECTURE_DIAGRAM.md` |
+| Add a new group or match | `data_layer.md` → "Extending Match Data" |
+| Add a new tab/section | `IMPLEMENTATION_SUMMARY.md` → "Adding a Section" |
+| Change colors or typography | `design_system.md` → "Color Tokens" |
+| Add backend / real leaderboard | `data_layer.md` → "Backend Integration" |
+| Understand prediction state | `data_layer.md` → "PredictionContext API" |
 
 ---
 
 ## 📖 Reading Order
 
 ### For New Developers
-1. `IMPLEMENTATION_SUMMARY.md` — Understand what exists
-2. `ARCHITECTURE_DIAGRAM.md` — See how it's structured
-3. `scroll_timeline_quick_reference.md` — Start implementing
-4. `scroll_timeline_system.md` — Deep dive when needed
+1. `IMPLEMENTATION_SUMMARY.md` — Understand the project end-to-end
+2. `ARCHITECTURE_DIAGRAM.md` — See how it's structured visually
+3. `data_layer.md` — Understand state and data
+4. `design_system.md` — Learn the design language
 
-### For Quick Implementation
-1. `scroll_timeline_quick_reference.md` — Get code snippets
-2. `scroll_timeline_system.md` — Reference API when needed
+### For Quick Tasks
+- Adding a match/group → `data_layer.md`
+- Fixing a style → `design_system.md`
+- Adding a tab → `IMPLEMENTATION_SUMMARY.md`
 
 ---
 
 ## 🔑 Current Project Structure
 
 ```
-src/
-├── main.jsx                  # React root + GSAP plugin registration
-├── App.jsx                   # Providers, image preload, section order
-├── index.css                 # Master stylesheet (imports from styles/)
+all-skill-no-luck/
+├── index.html                  # Entry HTML — fonts, root mount, mobile meta
+├── vite.config.js              # Vite 6 + Tailwind v4 Vite plugin
+├── package.json                # React 19, Vite, Tailwind v4
+├── .gitignore
+├── README.md
 │
-├── styles/                   # Modular CSS (one file per concern)
-│   ├── globals.css
-│   ├── navbar.css
-│   ├── progress-ring.css
-│   ├── aurora.css
-│   └── footer.css
+├── public/
+│   └── favicon.svg             # Football emoji favicon
 │
-├── sections/                 # Full-page sections
-│   ├── Hero.jsx
-│   ├── Service.jsx
-│   ├── ProgressRing.jsx
-│   ├── UfoGraph.jsx
-│   ├── Featured.jsx
-│   └── Footer.jsx
+├── docs/                       # ← YOU ARE HERE
+│   ├── DOCS_INDEX.md
+│   ├── IMPLEMENTATION_SUMMARY.md
+│   ├── ARCHITECTURE_DIAGRAM.md
+│   ├── data_layer.md
+│   └── design_system.md
 │
-├── components/               # Shared components
-│   ├── Navbar.jsx
-│   ├── loader.jsx
-│   ├── ProgressBar.jsx
-│   └── ui/                   # Magic UI primitives
-│
-├── context/                  # React contexts
-│   ├── LocaleContext.jsx
-│   ├── ScrollTimelineProvider.jsx
-│   ├── ScrollTimelineContext.js
-│   └── languages.js
-│
-├── hooks/                    # Custom hooks
-│   ├── useSectionScrollProgress.js
-│   └── useScrollTimeline.js
-│
-├── data/
-│   └── featuredWorks.js
-│
-├── lib/
-│   └── utils.jsx
-│
-└── utils/
-    ├── preloadImage.js
-    └── sendReview.js
+└── src/
+    ├── main.jsx                # App entry — loader gate, tab routing, providers
+    ├── index.css               # Master CSS (imports all from styles/)
+    │
+    ├── utils/                  # Design tokens (outside styles)
+    │   └── colors.css          # @theme design tokens (colors + fonts)
+    │
+    ├── styles/                 # Modular CSS (one file per concern)
+    │   ├── globals.css         # Body resets, scrollbar, base elements
+    │   ├── navbar.css          # Top nav + mobile bottom nav
+    │   └── components.css      # All component styles
+    │
+    ├── sections/               # One file per tab
+    │   ├── Home.jsx            # Home tab — countdown, stats, CTA
+    │   ├── Predict.jsx         # Prophesy tab — group picker + match cards
+    │   ├── Leaderboard.jsx     # Leaderboard tab — ranked table
+    │   └── Results.jsx         # Prophecies tab — prediction summary
+    │
+    ├── components/             # Shared reusable components
+    │   ├── Navbar.jsx          # 4-tab nav (desktop top + mobile bottom)
+    │   └── Loader.jsx          # Boot screen (1.2s gate)
+    │
+    ├── context/
+    │   └── PredictionContext.jsx  # Global state + localStorage persistence
+    │
+    └── data/
+        ├── groups.js           # 12 groups, 48 teams, flag emoji map
+        └── matches.js          # Auto-generated 72 matches + mock leaderboard
 ```
 
 ---
 
 ## 🔗 External Resources
 
-- **GSAP Documentation:** https://greensock.com/docs/
-- **ScrollTrigger Docs:** https://greensock.com/docs/v3/Plugins/ScrollTrigger
+- **React 19:** https://react.dev/
+- **Vite 6:** https://vitejs.dev/
 - **Tailwind CSS v4:** https://tailwindcss.com/docs
-- **Lenis Smooth Scroll:** https://github.com/darkroomengineering/lenis
-- **React Refs:** https://react.dev/reference/react/useRef
+- **Goal.com (design reference):** https://www.goal.com
+- **UEFA.com (design reference):** https://www.uefa.com
+- **FotMob (design reference):** https://www.fotmob.com

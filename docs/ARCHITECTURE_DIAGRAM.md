@@ -1,285 +1,179 @@
-# Scroll Timeline System - Architecture Diagram
+# Architecture Diagram
 
-> Updated: 2026-03-14
+> Project: All Skill No Luck — FIFA 2026 World Cup Prophecy Game
+> Updated: 2026-04-24
+
+---
 
 ## Component Hierarchy
 
 ```
-App.jsx
-├── ReactLenis (smooth scroll wrapper)
-│   └── LocaleProvider
-│       └── ScrollTimelineProvider ⚡ (Global Timeline Manager)
-│           │
-│           ├── Navbar
-│           │
-│           ├── Hero
-│           │   └── useSectionScrollProgress('hero-section') 📊
-│           │
-│           ├── Service
-│           │   └── gsap.matchMedia (desktop pin / mobile per-card reveals)
-│           │
-│           ├── ProgressRing
-│           │   └── useSectionScrollProgress('progress-ring-section') 📊
-│           │       └── UfoGraph (sub-section)
-│           │
-│           ├── Featured
-│           │   └── PreloadVideo / PreloadIframe (hybrid preload)
-│           │
-│           └── Footer
-```
-
-## Data Flow
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                   ScrollTimelineProvider                     │
-│  • Manages main timeline (global scroll 0-100%)             │
-│  • Registers/unregisters section timelines                  │
-│  • Handles cleanup on unmount                               │
-└─────────────────┬───────────────────────────────────────────┘
-                  │
-                  │ provides context
-                  │
-    ┌─────────────┴─────────────┐
-    │                           │
-    ▼                           ▼
-┌───────────────────┐   ┌──────────────────────┐
-│ useScrollTimeline │   │ Section Components   │
-│   • Registry      │   │   • useRef(section)  │
-│   • Methods       │◄──┤   • useRef(progress) │
-└───────────────────┘   └──────────┬───────────┘
-                                   │
-                                   │ calls
-                                   │
-                                   ▼
-                    ┌──────────────────────────────┐
-                    │ useSectionScrollProgress     │
-                    │  • Creates GSAP timeline     │
-                    │  • Runs custom animations    │
-                    │  • Registers with provider   │
-                    └──────────────────────────────┘
-```
-
-## Timeline Structure
-
-```
-Main Timeline (0% ──────────────────────────────── 100%)
+main.jsx  (App)
 │
-├── Hero Timeline (0% ─────── 100%)
-│   └── Content: arrow fades, image parallaxes y:100
+├── <Loader />                    ← shown for 1.2s on first load
 │
-├── Service Timeline (desktop only)
-│   ├── Pinned +=2800 scroll distance
-│   ├── Cards fly in from left/right
-│   └── Body bg: white → black, title turns white
+├── <PredictionProvider>          ← context/PredictionContext.jsx
+│     Provides: predictions, setPrediction, clearPredictions,
+│               predictionCount, username, setUsername, userScore
 │
-├── ProgressRing Timeline (0% ─────── 100%) [PINNED]
-│   ├── 4 SVG arc segments with strokeDashoffset
-│   ├── Pinned +=350% (desktop) / +=220% (mobile)
-│   └── UfoGraph sub-section after unpin
-│
-├── Featured (no scroll timeline)
-│   └── GSAP stagger reveal on viewport entry
-│
-└── Footer (no scroll timeline)
-    └── Static — no scroll-pinned animation
-```
-
-## Hook Architecture
-
-```
-useSectionScrollProgress Hook
-│
-├── Input Parameters
-│   ├── sectionId (required)
-│   ├── sectionRef (required)
-│   ├── start (default: 'top top')
-│   ├── end (default: '+=150%')
-│   ├── pin (default: true)
-│   ├── scrub (default: 1)
-│   ├── markers (default: false)
-│   ├── onAnimationSetup (callback)
-│   └── onProgress (callback)
-│
-├── Internal Process
-│   ├── 1. Get timeline context
-│   ├── 2. Create GSAP timeline
-│   ├── 3. Setup ScrollTrigger
-│   ├── 4. Run onAnimationSetup callback
-│   ├── 5. Register with provider
-│   └── 6. Return cleanup function
-│
-└── Cleanup
-    ├── Kill ScrollTrigger
-    ├── Kill timeline
-    └── Unregister from provider
-```
-
-## File Organization
-
-```
-Portfolio-Website/
-├── src/
-│   ├── main.jsx ⚡ (React root + GSAP plugin registration)
-│   ├── App.jsx ⚡ (wraps with providers, preloads images)
-│   ├── index.css (master stylesheet — imports from styles/)
+│   ├── <Navbar />                ← components/Navbar.jsx
+│   │     Props: activeTab, setActiveTab
+│   │     Renders:
+│   │       [desktop] top nav bar with 4 tab buttons
+│   │       [mobile]  fixed bottom nav bar with 4 tab buttons
 │   │
-│   ├── styles/                     # Modular CSS
-│   │   ├── globals.css             # Tailwind import, body resets, font
-│   │   ├── navbar.css              # Nav hover effect, floating style
-│   │   ├── progress-ring.css       # Ring component, starfield keyframes
-│   │   ├── aurora.css              # Aurora gradient + @theme token
-│   │   └── footer.css              # Form input/underline/submit styles
-│   │
-│   ├── context/
-│   │   ├── ScrollTimelineContext.js 📝 (context definition)
-│   │   ├── ScrollTimelineProvider.jsx 🎯 (main provider)
-│   │   ├── LocaleContext.jsx        📝 (i18n text + media)
-│   │   └── languages.js            📝 (language list)
-│   │
-│   ├── hooks/
-│   │   ├── useScrollTimeline.js    🔗 (access context)
-│   │   └── useSectionScrollProgress.js ⭐ (main hook)
-│   │
-│   ├── sections/
-│   │   ├── Hero.jsx                ✅
-│   │   ├── Service.jsx             ✅
-│   │   ├── ProgressRing.jsx        ✅
-│   │   ├── UfoGraph.jsx            ✅ (sub-section)
-│   │   ├── Featured.jsx            ✅
-│   │   ├── Footer.jsx              ✅
-│   │   ├── TorchBackground.jsx     ⚠️ (unused)
-│   │   ├── TorchService.jsx        ⚠️ (unused)
-│   │   └── usePinnedScrollProgress.js ⚠️ (unused)
-│   │
-│   ├── components/
-│   │   ├── Navbar.jsx              ✅
-│   │   ├── loader.jsx              ✅
-│   │   ├── AnimatedLineChart.jsx   🎨
-│   │   ├── ProgressBar.jsx         🎨
-│   │   ├── Torch.jsx               🎨
-│   │   └── ui/                     # Magic UI primitives
-│   │       ├── aurora-background.jsx
-│   │       ├── container-text-flip.jsx
-│   │       ├── cover.jsx
-│   │       ├── encrypted-text.jsx
-│   │       ├── noise-background.jsx
-│   │       └── sparkles.jsx
-│   │
-│   ├── data/
-│   │   └── featuredWorks.js        📦 (3 rows of works)
-│   │
-│   ├── lib/
-│   │   └── utils.jsx               🔧 cn() helper
-│   │
-│   └── utils/
-│       ├── preloadImage.js          🔧 image preloader
-│       └── sendReview.js            🔧 Google Sheets helper
-│
-└── docs/                            📚 (this folder)
-```
-
-## Scroll Trigger Visualization
-
-```
-Browser Viewport
-┌─────────────────────────────┐ ← top
-│                             │
-│   Section (scrolling up)    │
-│                             │
-├─────────────────────────────┤ ← center
-│                             │
-│                             │
-│                             │
-└─────────────────────────────┘ ← bottom
-
-ScrollTrigger Start/End Examples:
-
-'top top'         Section top reaches viewport top
-┌─────────────────────────────┐
-│ [SECTION TOP] ═══════════   │ ← Trigger point
-
-'top center'      Section top reaches viewport center
-┌─────────────────────────────┐
-│                             │
-│        [SECTION TOP] ═══════│ ← Trigger point
-
-'+=150%'          Extend scroll range
-Section stays/animates for 150% of viewport height
-```
-
-## Event Flow
-
-```
-User Scrolls Down
-    ↓
-ScrollTrigger Detects Scroll Position
-    ↓
-Updates Timeline Progress (0 → 1)
-    ↓
-GSAP Animates Elements
-    ├─→ Custom Animations: defined in onAnimationSetup
-    └─→ onProgress Callback (optional)
-```
-
-## State Management
-
-```
-┌─────────────────────────────────────┐
-│   ScrollTimelineProvider State      │
-├─────────────────────────────────────┤
-│  mainTimelineRef:                   │
-│    • GSAP Timeline instance         │
-│    • Tracks overall page scroll     │
-│                                     │
-│  sectionTimelinesRef (Map):         │
-│    ├─ 'hero-section' → Timeline     │
-│    ├─ 'progress-ring-section' → TL  │
-│    └─ (sections register on mount)  │
-└─────────────────────────────────────┘
-```
-
-## Dependency Graph
-
-```
-                   App.jsx
-                      │
-        ┌─────────────┴─────────────┐
-        │                           │
-   LocaleProvider          ScrollTimelineProvider
-        │                           │
-        │                 ┌─────────┴─────────┐
-        │                 │                   │
-        │          ScrollTimelineContext  useScrollTimeline
-        │                                     │
-        └─────────────┬───────────────────────┘
-                      │
-              Section Components
-                      │
-        ┌─────────────┴─────────────┐
-        │                           │
-  useSectionScrollProgress    gsap.matchMedia
-        │
-    GSAP + ScrollTrigger
-```
-
-## Legend
-
-```
-⚡ Provider/Context
-📊 Timeline Hook
-🎯 Main Entry Point
-⭐ Core Hook
-🎨 Shared Component
-✅ Active Section
-⚠️ Unused / Deprecated
-📝 Definition
-🔗 Accessor
-📦 Data
-🔧 Utility
-📚 Documentation
+│   └── <main>
+│         │
+│         ├── <Home />            ← sections/Home.jsx (activeTab='home')
+│         │     Reads:  usePredictions() → predictionCount
+│         │     Emits:  onPredict() → setActiveTab('predict')
+│         │     Local:  useCountdown() hook (setInterval)
+│         │
+│         ├── <Predict />         ← sections/Predict.jsx (activeTab='predict')
+│         │     Reads:  usePredictions() → predictions, setPrediction, predictionCount
+│         │     Data:   GROUPS, MATCHES_BY_GROUP from src/data/
+│         │     Local:  useState(activeGroup) = 'A'
+│         │
+│         ├── <Leaderboard />     ← sections/Leaderboard.jsx (activeTab='leaderboard')
+│         │     Reads:  usePredictions() → username, setUsername, userScore
+│         │     Data:   MOCK_USERS from src/data/matches.js
+│         │     Local:  useState(draft) for name input
+│         │
+│         └── <Results />         ← sections/Results.jsx (activeTab='results')
+│               Reads:  usePredictions() → predictions, predictionCount, clearPredictions
+│               Data:   GROUPS, MATCHES_BY_GROUP, FLAG_MAP from src/data/
 ```
 
 ---
 
-This architecture provides a scalable, maintainable, and performant scroll animation system inspired by anime.js timeline concepts.
+## Data Flow
+
+```
+User clicks pick button
+        │
+        ▼
+<Predict /> calls setPrediction(matchId, result)
+        │
+        ▼
+PredictionContext updates predictions state
+        │
+        ├──▶ localStorage.setItem('fifa2026_predictions', JSON.stringify(predictions))
+        │
+        └──▶ Re-renders:
+               • <Predict />     → pick button highlights gold
+               • <Hero />        → predictionCount stat updates live
+               • <Results />     → prophecy row appears
+               • <Leaderboard /> → (unaffected by predictions directly)
+```
+
+---
+
+## State Architecture
+
+```
+PredictionContext (localStorage-persisted)
+│
+├── predictions: Record<matchId, 'home'|'draw'|'away'>
+│     Key format:  "{groupId}-{matchIndex}"  e.g. "A-0", "B-3"
+│     Persisted:   localStorage key "fifa2026_predictions"
+│
+├── username: string
+│     Persisted:   localStorage key "fifa2026_username"
+│
+├── userScore: number
+│     Not persisted (random 20–50 per session, mock until real results)
+│
+└── predictionCount: number  (derived: Object.keys(predictions).length)
+```
+
+---
+
+## File Organization Tree
+
+```
+all-skill-no-luck/
+├── index.html
+├── vite.config.js
+├── package.json
+├── .gitignore
+├── README.md
+│
+├── public/
+│   └── favicon.svg
+│
+├── docs/
+│   ├── DOCS_INDEX.md           ← navigation hub
+│   ├── IMPLEMENTATION_SUMMARY.md
+│   ├── ARCHITECTURE_DIAGRAM.md ← this file
+│   ├── data_layer.md
+│   └── design_system.md
+│
+└── src/
+    ├── main.jsx
+    ├── index.css
+    │
+    ├── utils/
+    │   └── colors.css             @theme tokens (colors + fonts)
+    │
+    ├── styles/
+    │   ├── globals.css         resets + body
+    │   ├── navbar.css          top + bottom nav
+    │   └── components.css      all component styles
+    │
+    ├── sections/
+    │   ├── Home.jsx            tab: home
+    │   ├── Predict.jsx         tab: predict
+    │   ├── Leaderboard.jsx     tab: leaderboard
+    │   └── Results.jsx         tab: results
+    │
+    ├── components/
+    │   ├── Navbar.jsx
+    │   └── Loader.jsx
+    │
+    ├── context/
+    │   └── PredictionContext.jsx
+    │
+    └── data/
+        ├── groups.js           GROUPS array, FLAG_MAP
+        └── matches.js          ALL_MATCHES, MATCHES_BY_GROUP, MOCK_USERS
+```
+
+---
+
+## CSS Dependency Graph
+
+```
+src/index.css
+  │
+  ├── @import "tailwindcss"                   ← Tailwind v4 (via @tailwindcss/vite)
+  ├── @import "./utils/colors.css"            ← @theme CSS vars — loaded FIRST
+  ├── @import "./styles/globals.css"          ← resets + body; uses token vars
+  ├── @import "./styles/navbar.css"           ← uses: --color-accent, --color-bg, --font-heading
+  └── @import "./styles/components.css"
+        Uses all @theme vars:
+          --color-bg, --color-card, --color-card-2
+          --color-border, --color-border-2
+          --color-accent, --color-accent-2, --color-accent-dim
+          --color-blue, --color-cyan
+          --color-text, --color-text-2, --color-muted, --color-muted-2
+          --font-heading, --font-body
+```
+
+---
+
+## Tab Routing (No React Router)
+
+Tab state is managed in `main.jsx` with `useState`:
+
+```
+activeTab: 'home' | 'predict' | 'leaderboard' | 'results'
+     │
+     ├── passed to <Navbar activeTab setActiveTab />
+     │         → user clicks tab → setActiveTab(id)
+     │
+     └── used in <main> to conditionally render section:
+           {activeTab === 'home'        && <Hero />}
+           {activeTab === 'predict'     && <Predict />}
+           {activeTab === 'leaderboard' && <Leaderboard />}
+           {activeTab === 'results'     && <Results />}
+```

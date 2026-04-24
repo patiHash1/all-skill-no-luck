@@ -14,16 +14,16 @@ export const GROUPS = [
 ];
 
 export const FLAG_MAP = {
-  'United States': '🇺🇸', 'Brazil': '🇧🇷', 'Germany': '🇩🇪', 'Morocco': '🇲🇦',
-  'England': '🏴󠁧󠁢󠁥󠁮󠁧󠁿', 'France': '🇫🇷', 'Argentina': '🇦🇷', 'Portugal': '🇵🇹',
-  'Spain': '🇪🇸', 'Netherlands': '🇳🇱', 'Belgium': '🇧🇪', 'Japan': '🇯🇵',
-  'Canada': '🇨🇦', 'Mexico': '🇲🇽', 'Italy': '🇮🇹', 'Croatia': '🇭🇷',
-  'Uruguay': '🇺🇾', 'Colombia': '🇨🇴', 'Poland': '🇵🇱', 'Senegal': '🇸🇳',
-  'Australia': '🇦🇺', 'Switzerland': '🇨🇭', 'Denmark': '🇩🇰', 'South Korea': '🇰🇷',
-  'Ecuador': '🇪🇨', 'Peru': '🇵🇪', 'Ghana': '🇬🇭', 'Cameroon': '🇨🇲',
-  'Costa Rica': '🇨🇷', 'Panama': '🇵🇦', 'Saudi Arabia': '🇸🇦', 'Iran': '🇮🇷',
-  'Wales': '🏴󠁧󠁢󠁷󠁬󠁳󠁿', 'Scotland': '🏴󠁧󠁢󠁳󠁣󠁴󠁿', 'Nigeria': '🇳🇬', 'Algeria': '🇩🇿',
-  'Serbia': '🇷🇸', 'Czech Republic': '🇨🇿', 'Ivory Coast': '🇨🇮', 'Tunisia': '🇹🇳',
-  'New Zealand': '🇳🇿', 'Jamaica': '🇯🇲', 'Bolivia': '🇧🇴', 'Egypt': '🇪🇬',
-  'Norway': '🇳🇴', 'Ukraine': '🇺🇦', 'Qatar': '🇶🇦', 'Honduras': '🇭🇳',
+  'United States': 'us', 'Brazil': 'br', 'Germany': 'de', 'Morocco': 'ma',
+  'England': 'gb-eng', 'France': 'fr', 'Argentina': 'ar', 'Portugal': 'pt',
+  'Spain': 'es', 'Netherlands': 'nl', 'Belgium': 'be', 'Japan': 'jp',
+  'Canada': 'ca', 'Mexico': 'mx', 'Italy': 'it', 'Croatia': 'hr',
+  'Uruguay': 'uy', 'Colombia': 'co', 'Poland': 'pl', 'Senegal': 'sn',
+  'Australia': 'au', 'Switzerland': 'ch', 'Denmark': 'dk', 'South Korea': 'kr',
+  'Ecuador': 'ec', 'Peru': 'pe', 'Ghana': 'gh', 'Cameroon': 'cm',
+  'Costa Rica': 'cr', 'Panama': 'pa', 'Saudi Arabia': 'sa', 'Iran': 'ir',
+  'Wales': 'gb-wls', 'Scotland': 'gb-sct', 'Nigeria': 'ng', 'Algeria': 'dz',
+  'Serbia': 'rs', 'Czech Republic': 'cz', 'Ivory Coast': 'ci', 'Tunisia': 'tn',
+  'New Zealand': 'nz', 'Jamaica': 'jm', 'Bolivia': 'bo', 'Egypt': 'eg',
+  'Norway': 'no', 'Ukraine': 'ua', 'Qatar': 'qa', 'Honduras': 'hn',
 };

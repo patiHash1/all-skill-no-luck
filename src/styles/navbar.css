@@ -1,119 +1,133 @@
-/* ── Top navbar ────────────────────────────── */
+/* ── Top navbar — Goal.com style ──────────────
+   True black bar, thin red bottom accent line,
+   bold uppercase brand like Goal.com logo     */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 50;
-  background: rgba(10, 15, 30, 0.88);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+  border-bottom: 3px solid var(--color-accent); /* Goal.com red bottom stripe */
+  box-shadow: 0 2px 20px rgba(0,0,0,0.6);
 }
 
 .navbar-inner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
-  height: 60px;
+  padding: 0 1.25rem;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
 }
 
+/* Goal.com style brand — white + red bracket */
 .navbar-brand {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
-  color: var(--color-gold);
-  letter-spacing: 0.08em;
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 0;
+  white-space: nowrap;
 }
 
-.navbar-brand span {
-  color: #fff;
+.navbar-brand .brand-accent {
+  color: var(--color-accent);
 }
 
 .nav-tabs {
   display: flex;
-  gap: 0.25rem;
+  gap: 0;
   list-style: none;
+  height: 56px;
 }
 
 .nav-tab-btn {
-  padding: 0.45rem 1.1rem;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--color-muted);
-  transition: color 0.2s, background 0.2s;
+  height: 100%;
+  padding: 0 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted-2);
+  transition: color 0.15s;
+  position: relative;
+  border-bottom: 3px solid transparent;
+  /* offset for the navbar bottom border */
+  margin-bottom: -3px;
 }
 
 .nav-tab-btn:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.07);
+  color: var(--color-text);
 }
 
+/* Active tab: white text + red underline (Goal.com nav) */
 .nav-tab-btn.active {
-  color: var(--color-navy);
-  background: var(--color-gold);
-  font-weight: 600;
+  color: var(--color-text);
+  border-bottom-color: var(--color-accent);
 }
 
-/* ── Bottom navigation (mobile) ──────────────── */
+/* ── Bottom navigation (mobile) ─────────────
+   FotMob style: dark bar, icon + label       */
 .bottom-nav {
   display: none;
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 0; left: 0; right: 0;
   z-index: 50;
-  background: rgba(10, 15, 30, 0.96);
-  backdrop-filter: blur(14px);
-  border-top: 1px solid var(--color-border);
-  /* safe area for iPhone notch / home indicator */
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border-2);
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.6);
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .bottom-nav-btn {
+  position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 3px;
-  padding: 0.6rem 0.25rem 0.5rem;
+  padding: 0.55rem 0.25rem 0.5rem;
   color: var(--color-muted);
   transition: color 0.15s;
   min-height: 56px;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.bottom-nav-btn:active {
-  background: rgba(255, 255, 255, 0.04);
+/* FotMob style: red top bar on active */
+.bottom-nav-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 0 0 2px 2px;
+  opacity: 0;
+  transition: opacity 0.15s;
 }
 
-.bottom-nav-btn.active {
-  color: var(--color-gold);
-}
+.bottom-nav-btn.active::after { opacity: 1; }
+.bottom-nav-btn.active { color: var(--color-accent); }
+.bottom-nav-btn:active { background: var(--color-card); }
 
 .bottom-nav-icon {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   line-height: 1;
 }
 
 .bottom-nav-label {
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-/* ── Responsive switch ───────────────────────── */
 @media (max-width: 640px) {
-  /* Hide desktop top-nav tabs, show brand only */
-  .nav-tabs {
-    display: none;
-  }
-
-  /* Show bottom nav */
-  .bottom-nav {
-    display: flex;
-  }
+  .nav-tabs   { display: none; }
+  .bottom-nav { display: flex; }
 }
