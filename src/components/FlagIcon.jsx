@@ -1,4 +1,4 @@
-import { FLAG_MAP } from '../data/groups';
+import { FLAG_MAP } from "../data/groups";
 
 export default function FlagIcon({ team, style = {} }) {
   const code = FLAG_MAP[team];
@@ -8,7 +8,7 @@ export default function FlagIcon({ team, style = {} }) {
       src={`https://flagcdn.com/w40/${code}.png`}
       alt={`${team} flag`}
       width="20"
-      style={{ verticalAlign: 'middle', borderRadius: '2px', ...style }}
+      style={{ verticalAlign: "middle", borderRadius: "2px", ...style }}
     />
   );
 }

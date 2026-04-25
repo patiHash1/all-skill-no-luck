@@ -526,7 +526,6 @@
   text-transform: uppercase;
   transition: opacity 0.15s, transform 0.1s, box-shadow 0.15s;
   box-shadow: 0 4px 15px rgba(155, 44, 255, 0.3);
-  align-self: flex-start;
   -webkit-tap-highlight-color: transparent;
 }
 
