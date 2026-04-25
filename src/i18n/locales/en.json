@@ -111,6 +111,9 @@
     "col_progress": "Progress",
     "you": "YOU",
     "pts": "pts",
+    "mode_overall": "Overall",
+    "mode_weekly": "Weekly",
+    "week": "Week",
     "footer": "⚡ Points are awarded when official results are published — your predictions will be judged."
   },
   "results": {

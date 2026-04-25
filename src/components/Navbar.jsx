@@ -1,12 +1,32 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import SettingsModal from './SettingsModal';
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import SettingsModal from "./SettingsModal";
 
 const TABS = [
-  { id: 'home',        icon: '🏠', labelKey: 'nav.home',         shortLabelKey: 'nav.home_short' },
-  { id: 'fixtures',    icon: '📅', labelKey: 'nav.fixtures',     shortLabelKey: 'nav.fixtures_short' },
-  { id: 'leaderboard', icon: '🏆', labelKey: 'nav.leaderboard',  shortLabelKey: 'nav.leaderboard_short' },
-  { id: 'results',     icon: '🔮', labelKey: 'nav.results',      shortLabelKey: 'nav.results_short' },
+  {
+    id: "home",
+    icon: "🏠",
+    labelKey: "nav.home",
+    shortLabelKey: "nav.home_short",
+  },
+  {
+    id: "fixtures",
+    icon: "📅",
+    labelKey: "nav.fixtures",
+    shortLabelKey: "nav.fixtures_short",
+  },
+  {
+    id: "leaderboard",
+    icon: "🏆",
+    labelKey: "nav.leaderboard",
+    shortLabelKey: "nav.leaderboard_short",
+  },
+  {
+    id: "results",
+    icon: "🔮",
+    labelKey: "nav.results",
+    shortLabelKey: "nav.results_short",
+  },
 ];
 
 export default function Navbar({ activeTab, setActiveTab }) {
@@ -17,12 +37,15 @@ export default function Navbar({ activeTab, setActiveTab }) {
       {/* ── Top bar (desktop only) ── */}
       <nav className="navbar">
         <div className="navbar-inner">
-          <div className="navbar-brand">{t('nav.brand_prefix')} <span className="brand-accent">{t('nav.brand_accent')}</span></div>
+          <div className="navbar-brand">
+            {t("nav.brand_prefix")}{" "}
+            <span className="brand-accent">{t("nav.brand_accent")}</span>
+          </div>
           <ul className="nav-tabs">
             {TABS.map((t_item) => (
               <li key={t_item.id}>
                 <button
-                  className={`nav-tab-btn ${activeTab === t_item.id ? 'active' : ''}`}
+                  className={`nav-tab-btn ${activeTab === t_item.id ? "active" : ""}`}
                   onClick={() => setActiveTab(t_item.id)}
                 >
                   {t_item.icon} {t(t_item.labelKey)}
@@ -30,11 +53,16 @@ export default function Navbar({ activeTab, setActiveTab }) {
               </li>
             ))}
             <li>
-              <button 
-                className="nav-tab-btn" 
+              <button
+                className="nav-tab-btn"
                 onClick={() => setShowSettings(true)}
-                style={{ marginLeft: '1rem', display: 'flex', alignItems: 'center', fontSize: '1.1rem' }}
-                title={t('settings.title')}
+                style={{
+                  marginLeft: "1rem",
+                  display: "flex",
+                  alignItems: "center",
+                  fontSize: "1.1rem",
+                }}
+                title={t("settings.title")}
               >
                 ⚙️
               </button>
@@ -48,16 +76,21 @@ export default function Navbar({ activeTab, setActiveTab }) {
         {TABS.map((t_item) => (
           <button
             key={t_item.id}
-            className={`bottom-nav-btn ${activeTab === t_item.id ? 'active' : ''}`}
+            className={`bottom-nav-btn ${activeTab === t_item.id ? "active" : ""}`}
             onClick={() => setActiveTab(t_item.id)}
           >
             <span className="bottom-nav-icon">{t_item.icon}</span>
             <span className="bottom-nav-label">{t(t_item.shortLabelKey)}</span>
           </button>
         ))}
-        <button className="bottom-nav-btn" onClick={() => setShowSettings(true)}>
+        <button
+          className="bottom-nav-btn"
+          onClick={() => setShowSettings(true)}
+        >
           <span className="bottom-nav-icon">⚙️</span>
-          <span className="bottom-nav-label" style={{ visibility: 'hidden' }}>.</span>
+          <span className="bottom-nav-label" style={{ visibility: "hidden" }}>
+            .
+          </span>
         </button>
       </nav>
 

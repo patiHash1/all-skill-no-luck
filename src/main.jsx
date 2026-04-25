@@ -1,19 +1,19 @@
-import { StrictMode, useState, useEffect } from 'react';
-import { createRoot } from 'react-dom/client';
-import { PredictionProvider } from './context/PredictionContext';
-import { ThemeProvider } from './context/ThemeContext';
-import { LiveMatchProvider } from './context/LiveMatchContext';
-import Navbar from './components/Navbar';
-import Loader from './components/Loader';
-import Home from './sections/Home';
-import Fixtures from './sections/Fixtures';
-import Leaderboard from './sections/Leaderboard';
-import Results from './sections/Results';
-import './index.css';
-import './i18n/config';
+import { StrictMode, useState, useEffect } from "react";
+import { createRoot } from "react-dom/client";
+import { PredictionProvider } from "./context/PredictionContext";
+import { ThemeProvider } from "./context/ThemeContext";
+import { LiveMatchProvider } from "./context/LiveMatchContext";
+import Navbar from "./components/Navbar";
+import Loader from "./components/Loader";
+import Home from "./sections/Home";
+import Fixtures from "./sections/Fixtures";
+import Leaderboard from "./sections/Leaderboard";
+import Results from "./sections/Results";
+import "./index.css";
+import "./i18n/config";
 
 function App() {
-  const [activeTab, setActiveTab] = useState('home');
+  const [activeTab, setActiveTab] = useState("home");
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -29,10 +29,12 @@ function App() {
         <LiveMatchProvider>
           <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
           <main>
-            {activeTab === 'home'        && <Home onPredict={() => setActiveTab('fixtures')} />}
-            {activeTab === 'fixtures'    && <Fixtures />}
-            {activeTab === 'leaderboard' && <Leaderboard />}
-            {activeTab === 'results'     && <Results />}
+            {activeTab === "home" && (
+              <Home onPredict={() => setActiveTab("results")} />
+            )}
+            {activeTab === "fixtures" && <Fixtures />}
+            {activeTab === "leaderboard" && <Leaderboard />}
+            {activeTab === "results" && <Results />}
           </main>
         </LiveMatchProvider>
       </PredictionProvider>
@@ -40,8 +42,8 @@ function App() {
   );
 }
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 );

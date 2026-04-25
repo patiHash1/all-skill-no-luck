@@ -111,6 +111,9 @@
     "col_progress": "Progreso",
     "you": "TÚ",
     "pts": "pts",
+    "mode_overall": "Global",
+    "mode_weekly": "Semanal",
+    "week": "Semana",
     "footer": "⚡ Los puntos se otorgan cuando se publican los resultados oficiales — tus predicciones serán juzgadas."
   },
   "results": {
