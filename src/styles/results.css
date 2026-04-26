@@ -95,9 +95,13 @@
 }
 
 /* Solid accent chips — Goal.com style */
-.chip-home { background: rgba(0,61,165,0.3);   color: var(--color-cyan);   border: 1px solid rgba(0,178,243,0.3); }
-.chip-draw { background: rgba(255,255,255,0.07); color: var(--color-muted-2); border: 1px solid var(--color-border-2); }
-.chip-away { background: rgba(243,79,54,0.2);   color: var(--color-accent-2); border: 1px solid rgba(243,79,54,0.35); }
+.chip-home { background: rgba(0,61,165,0.1);   color: var(--color-blue);   border: 1px solid rgba(0,61,165,0.2); }
+.chip-draw { background: rgba(0,0,0,0.05);      color: var(--color-muted); border: 1px solid var(--color-border); }
+.chip-away { background: rgba(243,79,54,0.1);   color: var(--color-red);    border: 1px solid rgba(243,79,54,0.2); }
+
+[data-theme="light"] .chip-home { background: rgba(0,61,165,0.1);   color: #003da5; border-color: rgba(0,61,165,0.2); }
+[data-theme="light"] .chip-draw { background: rgba(0,0,0,0.05);      color: #4b5563; border-color: #e5e7eb; }
+[data-theme="light"] .chip-away { background: rgba(229,62,62,0.1);   color: #c53030; border-color: rgba(229,62,62,0.2); }
 
 /* ── Empty state ─────────────────────────── */
 .empty-state {

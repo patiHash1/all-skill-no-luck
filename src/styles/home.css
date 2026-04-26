@@ -14,7 +14,7 @@
 .hero-orb-1 {
   width: clamp(400px, 70vw, 900px);
   height: clamp(400px, 70vw, 900px);
-  background: radial-gradient(circle, rgba(243,79,54,0.09) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(155, 44, 255, 0.08) 0%, transparent 60%);
   top: -30%;
   right: -20%;
   filter: blur(50px);
@@ -283,9 +283,9 @@
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(243, 79, 54, 0.4); }
-  70% { box-shadow: 0 0 0 4px rgba(243, 79, 54, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(243, 79, 54, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(155, 44, 255, 0.4); }
+  70% { box-shadow: 0 0 0 4px rgba(155, 44, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(155, 44, 255, 0); }
 }
 
 .upcoming-match-content {

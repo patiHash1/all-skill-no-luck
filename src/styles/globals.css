@@ -52,3 +52,11 @@ img { max-width: 100%; display: block; }
 ::-webkit-scrollbar-track { background: var(--color-bg); }
 ::-webkit-scrollbar-thumb { background: var(--color-border-2); border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
+
+/* Utility Classes */
+.gold   { color: #d4af37; }
+.red    { color: var(--color-red); }
+.accent { color: var(--color-accent); }
+.cyan   { color: var(--color-cyan); }
+
+[data-theme="light"] .gold { color: #b8860b; }

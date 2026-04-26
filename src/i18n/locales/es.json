@@ -101,7 +101,7 @@
     "title": "Clasificación",
     "sub": "Las puntuaciones se actualizarán en vivo a medida que se jueguen los partidos",
     "restricted_title": "Acceso Restringido",
-    "restricted_desc": "Por favor, inicia sesión en el menú de Configuración (⚙️) para ver la clasificación global.",
+    "restricted_desc": "Por favor, inicia sesión en el menú de Configuración para ver la clasificación global.",
     "prompt_label": "Ingresa tu nombre para unirte a la clasificación",
     "prompt_placeholder": "ej. FanFutbol99",
     "prompt_btn": "Unirse a la Clasificación",
@@ -114,7 +114,7 @@
     "mode_overall": "Global",
     "mode_weekly": "Semanal",
     "week": "Semana",
-    "footer": "⚡ Los puntos se otorgan cuando se publican los resultados oficiales — tus predicciones serán juzgadas."
+    "footer": "Los puntos se otorgan cuando se publican los resultados oficiales — tus predicciones serán juzgadas."
   },
   "results": {
     "label": "Tus Predicciones",
@@ -138,7 +138,7 @@
     "win": "Gana",
     "draw": "Empate",
     "clear_confirm": "¿Borrar todas las predicciones? Esto no se puede deshacer.",
-    "clear_btn": "🗑 Borrar Todas las Predicciones"
+    "clear_btn": "Borrar Todas las Predicciones"
   },
   "teams": {
     "United States": "Estados Unidos",

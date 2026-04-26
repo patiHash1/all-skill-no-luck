@@ -3,6 +3,7 @@ import { GROUPS } from "../data/groups";
 import FlagIcon from "../components/FlagIcon";
 import { MATCHES_BY_GROUP } from "../data/matches";
 import { useTranslation } from "react-i18next";
+import { Calendar, MapPin, BarChart3 } from "lucide-react";
 import TeamStatsModal from "../components/TeamStatsModal";
 import "../styles/predict.css";
 
@@ -24,10 +25,12 @@ function FixtureCard({ match, t, onTeamClick }) {
           letterSpacing: "0.05em",
         }}
       >
-        <span>
-          🗓 {match.date} • {match.time}
+        <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+          <Calendar size={12} /> {match.date} • {match.time}
         </span>
-        <span>🏟 {match.stadium}</span>
+        <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+          <MapPin size={12} /> {match.stadium}
+        </span>
       </div>
 
       <div className="match-teams" style={{ paddingBottom: "0.5rem" }}>
@@ -73,7 +76,7 @@ function GroupStandings({ group, t, onTeamClick }) {
           gap: "0.5rem",
         }}
       >
-        📊 {t("fixtures.standings", "Group Standings")}
+        <BarChart3 size={18} /> {t("fixtures.standings", "Group Standings")}
       </h3>
       <div
         className="card"
