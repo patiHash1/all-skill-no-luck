@@ -391,7 +391,7 @@
 }
 
 .match-card:has(.pick-btn.picked) {
-  border-color: rgba(243,79,54,0.35);
+  border-color: rgba(56, 97, 251, 0.45);
 }
 
 .match-card:has(.pick-btn.picked)::before {
@@ -472,10 +472,19 @@
 .pick-btn:active { transform: scale(0.96); }
 
 .pick-btn.picked {
-  background: var(--color-accent);
+  background: var(--color-bg);
   border-color: var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 800;
+  box-shadow: 0 0 12px var(--color-accent-soft);
+}
+
+[data-theme="light"] .pick-btn.picked {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-cyan) 100%);
+  border-color: transparent;
   color: #fff;
   font-weight: 800;
+  box-shadow: 0 4px 12px rgba(56, 97, 251, 0.3);
 }
 
 
