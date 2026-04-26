@@ -83,7 +83,7 @@ function GroupStandings({ group, t, onTeamClick }) {
         style={{
           padding: 0,
           overflow: "hidden",
-          background: "rgba(255, 255, 255, 0.03)",
+          background: "var(--color-accent-soft-2)",
         }}
       >
         <table className="leaderboard-table" style={{ margin: 0 }}>
@@ -103,7 +103,7 @@ function GroupStandings({ group, t, onTeamClick }) {
             {teams.map((team, idx) => (
               <tr
                 key={team}
-                style={{ borderBottom: "1px solid rgba(255, 255, 255, 0.05)" }}
+                style={{ borderBottom: "1px solid var(--color-border)" }}
               >
                 <td
                   style={{

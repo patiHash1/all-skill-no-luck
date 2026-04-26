@@ -33,10 +33,10 @@
 }
 
 /* Podium rows */
-.podium-row-1 td { background: rgba(155, 44, 255, 0.07) !important; }
+.podium-row-1 td { background: var(--color-accent-soft) !important; }
 .podium-row-2 td { background: var(--color-card) !important; }
 .podium-row-3 td { background: var(--color-card-2) !important; }
-.user-row td    { background: rgba(155, 44, 255, 0.05) !important; }
+.user-row td    { background: var(--color-accent-soft-2) !important; }
 
 @media (max-width: 480px) {
   .leaderboard-table .col-bar { display: none; }
@@ -59,9 +59,6 @@
 .rank-2     { background: var(--color-border-2); color: var(--color-text); }
 .rank-3     { background: var(--color-border); color: var(--color-text-2); }
 .rank-other { background: transparent; color: var(--color-muted); border: 1px solid var(--color-border-2); }
-
-[data-theme="light"] .rank-2 { background: #e5e7eb; color: #374151; }
-[data-theme="light"] .rank-3 { background: #f3f4f6; color: #4b5563; }
 
 /* Progress bar in leaderboard */
 .score-bar-track {

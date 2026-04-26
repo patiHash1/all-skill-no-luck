@@ -25,7 +25,7 @@
   position: absolute;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(155, 44, 255, 0.05) 0%, transparent 65%);
+  background: radial-gradient(circle, var(--color-accent-soft-2) 0%, transparent 65%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -268,14 +268,10 @@
 }
 
 .roster-card {
-  background: rgba(0,0,0,0.03);
+  background: var(--color-accent-soft-2);
   padding: 1.25rem;
   border-radius: 8px;
   text-align: left;
-}
-
-[data-theme="light"] .roster-card {
-  background: #f8fafc;
 }
 
 .roster-card.starters {
@@ -458,7 +454,7 @@
 .pick-btn:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
-  background: rgba(155, 44, 255, 0.04);
+  background: var(--color-accent-soft-2);
 }
 
 .pick-btn:active { transform: scale(0.96); }

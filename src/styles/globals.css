@@ -18,10 +18,11 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background-color: var(--color-bg);
-  /* Vibrant dual-gradient background */
+  /* Flashy Static Mesh Background — premium high-energy feel */
   background-image: 
-    radial-gradient(circle at 15% 0%, rgba(155, 44, 255, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 85% 100%, rgba(0, 229, 255, 0.15) 0%, transparent 50%);
+    radial-gradient(circle at 5% 5%, var(--color-accent-soft) 0%, transparent 45%),
+    radial-gradient(circle at 95% 5%, var(--color-blue-soft) 0%, transparent 45%),
+    radial-gradient(circle at 50% 100%, var(--color-accent-soft-2) 0%, transparent 50%);
   background-attachment: fixed;
 }
 
@@ -43,7 +44,7 @@ img { max-width: 100%; display: block; }
 
 /* Accent-tinted text selection */
 ::selection {
-  background: rgba(155, 44, 255, 0.3);
+  background: var(--color-accent);
   color: #fff;
 }
 
@@ -54,9 +55,7 @@ img { max-width: 100%; display: block; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
 
 /* Utility Classes */
-.gold   { color: #d4af37; }
+.gold   { color: var(--color-gold); }
 .red    { color: var(--color-red); }
 .accent { color: var(--color-accent); }
 .cyan   { color: var(--color-cyan); }
-
-[data-theme="light"] .gold { color: #b8860b; }
