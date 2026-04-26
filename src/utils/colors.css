@@ -3,7 +3,7 @@
    Inspiration: Goal.com · UEFA.com · FotMob.com
    ═══════════════════════════════════════════════════ */
 
-@theme {
+:root {
 
   /* ── Backgrounds & Surfaces ─────────────────────── */
   --color-bg:        #0a0a0f;   /* deeper background for contrast */
