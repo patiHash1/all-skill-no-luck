@@ -55,7 +55,11 @@ img { max-width: 100%; display: block; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
 
 /* Utility Classes */
-.gold   { color: var(--color-gold); }
+.gold   { color: var(--color-text-2); } /* image: light blue for highlights */
 .red    { color: var(--color-red); }
 .accent { color: var(--color-accent); }
 .cyan   { color: var(--color-cyan); }
+
+/* Theme-specific overrides for highlights */
+[data-theme="light"] .gold { color: var(--color-text-2); } /* #224AB2 in light mode */
+[data-theme="dark"] .brand-accent { color: var(--color-muted); }
