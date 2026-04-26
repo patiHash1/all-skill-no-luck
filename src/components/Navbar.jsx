@@ -1,29 +1,30 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Home, Calendar, Trophy, Sparkles, Settings } from "lucide-react";
 import SettingsModal from "./SettingsModal";
 
 const TABS = [
   {
     id: "home",
-    icon: "🏠",
+    icon: <Home size={18} />,
     labelKey: "nav.home",
     shortLabelKey: "nav.home_short",
   },
   {
     id: "fixtures",
-    icon: "📅",
+    icon: <Calendar size={18} />,
     labelKey: "nav.fixtures",
     shortLabelKey: "nav.fixtures_short",
   },
   {
     id: "leaderboard",
-    icon: "🏆",
+    icon: <Trophy size={18} />,
     labelKey: "nav.leaderboard",
     shortLabelKey: "nav.leaderboard_short",
   },
   {
     id: "results",
-    icon: "🔮",
+    icon: <Sparkles size={18} />,
     labelKey: "nav.results",
     shortLabelKey: "nav.results_short",
   },
@@ -54,7 +55,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
             ))}
             <li>
               <button
-                className="nav-tab-btn"
+                className="nav-tab-btn settings-btn"
                 onClick={() => setShowSettings(true)}
                 style={{
                   marginLeft: "1rem",
@@ -64,7 +65,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
                 }}
                 title={t("settings.title")}
               >
-                ⚙️
+                <Settings size={20} />
               </button>
             </li>
           </ul>
@@ -84,10 +85,10 @@ export default function Navbar({ activeTab, setActiveTab }) {
           </button>
         ))}
         <button
-          className="bottom-nav-btn"
+          className="bottom-nav-btn settings-btn"
           onClick={() => setShowSettings(true)}
         >
-          <span className="bottom-nav-icon">⚙️</span>
+          <span className="bottom-nav-icon"><Settings size={20} /></span>
           <span className="bottom-nav-label" style={{ visibility: "hidden" }}>
             .
           </span>

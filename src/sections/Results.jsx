@@ -3,6 +3,7 @@ import FlagIcon from "../components/FlagIcon";
 import { usePredictions } from "../context/PredictionContext";
 import { useLiveMatch } from "../context/LiveMatchContext";
 import { useTranslation } from "react-i18next";
+import { Flame } from "lucide-react";
 import { ALL_MATCHES, MATCHES_BY_GROUP } from "../data/matches";
 import "../styles/results.css";
 import "../styles/predict.css";
@@ -50,9 +51,16 @@ export default function Results() {
       <div style={{ marginTop: "2rem", marginBottom: "3rem" }}>
         <h2
           className="results-group-title"
-          style={{ marginBottom: "1.5rem", border: "none" }}
+          style={{
+            marginBottom: "1.5rem",
+            border: "none",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.5rem",
+          }}
         >
-          🔥 {t("results.active_predictions", "Make Your Predictions")}
+          <Flame size={20} className="red" />{" "}
+          {t("results.active_predictions", "Make Your Predictions")}
         </h2>
         <div className="match-grid">
           {upcomingMatches.map((match) => {
