@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { usePredictions } from "../context/PredictionContext";
 import { useLiveMatch } from "../context/LiveMatchContext";
 import { useTranslation } from "react-i18next";
+import { Sparkles } from "lucide-react";
 import "../styles/home.css";
 import { ALL_MATCHES } from "../data/matches";
 import { HIGHLIGHTS_DATA } from "../data/highlights";
@@ -53,7 +54,7 @@ export default function Home({ onPredict }) {
       {/* ── Compact Hero Section ── */}
       <div className="hero-section">
         <div className="hero-badge">
-          <span>🔮</span> {t("home.badge")}
+          <Sparkles size={14} className="gold" /> {t("home.badge")}
         </div>
 
         <h1 className="hero-title">

@@ -36,27 +36,44 @@
      FotMob live green, standard error red           */
   --color-green:     #00a650;   /* live / correct        */
   --color-red:       #e53e3e;   /* error / danger        */
+  --color-gold:      #d4af37;   /* trophies / ranking    */
 
-  /* ── Typography ───────────────────────────────────
-     Loaded via Google Fonts in index.html           */
-  --font-heading:    'Bebas Neue', sans-serif;
-  --font-body:       'Inter', sans-serif;
+  /* ── Functional Translucent Tokens ──────────────── */
+  --color-accent-soft: rgba(155, 44, 255, 0.08);
+  --color-accent-soft-2: rgba(155, 44, 255, 0.04);
+  --color-blue-soft:   rgba(0, 85, 255, 0.1);
+  --color-red-soft:    rgba(229, 62, 62, 0.1);
+  --color-gold-soft:   rgba(212, 175, 55, 0.1);
 
 }
 
 /* ── Light Theme Overrides ────────────────────────
    Clean, high-contrast whites and light grays    */
 [data-theme="light"] {
-  --color-bg:        #f4f5f7;
+  --color-bg:        #f8fafc;   /* clean slate bg */
   --color-surface:   #ffffff;
   --color-card:      #ffffff;
-  --color-card-2:    #f0f2f5;
+  --color-card-2:    #f1f5f9;
 
-  --color-border:    #e5e7eb;
-  --color-border-2:  #d1d5db;
+  --color-border:    #e2e8f0;
+  --color-border-2:  #9AB1CB;   /* requested light grayish blue */
 
-  --color-text:      #111827;
-  --color-text-2:    #374151;
-  --color-muted:     #6b7280;
-  --color-muted-2:   #9ca3af;
+  --color-text:      #092059;   /* requested dark navy */
+  --color-text-2:    #224AB2;   /* requested medium blue */
+  --color-muted:     #64748b;
+  --color-muted-2:   #9AB1CB;
+
+  --color-accent:    #224AB2;   /* requested blue as primary accent */
+  --color-accent-dim:#092059;   /* requested dark navy */
+  --color-blue:      #224AB2;
+  --color-green:     #68707a;
+  --color-red:       #e11d48;
+  --color-cyan:      #3b82f6;
+  --color-gold:      #3fdb2a;
+
+  --color-accent-soft: rgba(104, 112, 122, 0.15); /* #68707a tint */
+  --color-accent-soft-2: rgba(34, 74, 178, 0.06);
+  --color-blue-soft:   rgba(34, 74, 178, 0.18);
+  --color-red-soft:    rgba(225, 29, 72, 0.1);
+  --color-gold-soft:   rgba(63, 219, 42, 0.1);
 }

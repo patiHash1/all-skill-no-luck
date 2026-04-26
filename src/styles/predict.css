@@ -59,8 +59,9 @@
 
 /* ── Group header bar — UEFA authority ───── */
 .group-header {
-  background: linear-gradient(90deg, var(--color-blue) 0%, rgba(0,61,165,0.3) 100%);
-  border: 1px solid rgba(0,61,165,0.4);
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-accent-dim) 100%);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   border-radius: 4px;
   padding: 0.6rem 1rem;
   margin-bottom: 0.75rem;
@@ -72,18 +73,18 @@
 .group-header-name {
   font-family: var(--font-heading);
   font-size: 1rem;
-  color: var(--color-cyan);
+  color: #fff;
   letter-spacing: 0.1em;
 }
 
 .group-header-teams {
   font-size: 0.72rem;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .group-header-count {
   font-size: 0.7rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* ── Progress bar ────────────────────────── */

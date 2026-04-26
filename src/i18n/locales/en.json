@@ -101,7 +101,7 @@
     "title": "Leaderboard",
     "sub": "Scores will be updated live as matches are played",
     "restricted_title": "Access Restricted",
-    "restricted_desc": "Please log in via the Settings menu (⚙️) to view the global standings.",
+    "restricted_desc": "Please log in via the Settings menu to view the global standings.",
     "prompt_label": "Enter your name to join the leaderboard",
     "prompt_placeholder": "e.g. FootballFan99",
     "prompt_btn": "Join Leaderboard",
@@ -114,7 +114,7 @@
     "mode_overall": "Overall",
     "mode_weekly": "Weekly",
     "week": "Week",
-    "footer": "⚡ Points are awarded when official results are published — your predictions will be judged."
+    "footer": "Points are awarded when official results are published — your predictions will be judged."
   },
   "results": {
     "label": "Your Predictions",
@@ -138,7 +138,7 @@
     "win": "Win",
     "draw": "Draw",
     "clear_confirm": "Clear all predictions? This cannot be undone.",
-    "clear_btn": "🗑 Clear All Predictions"
+    "clear_btn": "Clear All Predictions"
   },
   "teams": {
     "United States": "United States",

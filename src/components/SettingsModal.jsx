@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { X } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 import { usePredictions } from "../context/PredictionContext";
 
@@ -26,7 +27,7 @@ export default function SettingsModal({ onClose }) {
         <div className="modal-header">
           <span className="modal-title">{t("settings.title")}</span>
           <button className="modal-close" onClick={onClose}>
-            ✕
+            <X size={20} />
           </button>
         </div>
         <div

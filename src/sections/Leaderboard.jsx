@@ -2,6 +2,7 @@ import { useState } from "react";
 import { MOCK_USERS } from "../data/matches";
 import { usePredictions } from "../context/PredictionContext";
 import { useTranslation } from "react-i18next";
+import { User, Lock, Trophy } from "lucide-react";
 import "../styles/leaderboard.css";
 
 const MAX_SCORE = 72;
@@ -36,7 +37,12 @@ export default function Leaderboard() {
   const allUsers = username
     ? [
         ...MOCK_USERS,
-        { name: username, avatar: "🫵", score: userScore, isYou: true },
+        {
+          name: username,
+          avatar: <User size={14} />,
+          score: userScore,
+          isYou: true,
+        },
       ]
     : MOCK_USERS;
 
@@ -106,7 +112,7 @@ export default function Leaderboard() {
       {/* Restricted View */}
       {!username ? (
         <div className="empty-state">
-          <span className="empty-icon">🔒</span>
+          <span className="empty-icon"><Lock size={48} /></span>
           <h2
             style={{
               fontFamily: "var(--font-heading)",
@@ -145,9 +151,11 @@ export default function Leaderboard() {
                   >
                     <td>
                       <span className={`rank-badge ${getRankClass(user.rank)}`}>
-                        {user.rank <= 3
-                          ? ["🥇", "🥈", "🥉"][user.rank - 1]
-                          : user.rank}
+                        {user.rank <= 3 ? (
+                          <Trophy size={16} />
+                        ) : (
+                          user.rank
+                        )}
                       </span>
                     </td>
                     <td>
