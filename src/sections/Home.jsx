@@ -57,11 +57,14 @@ export default function Home({ onPredict }) {
           <Sparkles size={14} className="gold" /> {t("home.badge")}
         </div>
 
-        <h1 className="hero-title">
-          {t("home.title_line1")}{" "}
-          <span className="gold">{t("home.title_line2")}</span>{" "}
-          {t("home.title_line3")}
-        </h1>
+        <div className="hero-title-container">
+          <div className="hero-title-bg" aria-hidden="true" />
+          <h1 className="hero-title">
+            {t("home.title_line1")}{" "}
+            <span className="gold">{t("home.title_line2")}</span>{" "}
+            {t("home.title_line3")}
+          </h1>
+        </div>
 
         {/* Countdown to Live Match */}
         <div className="countdown" style={{ margin: "0.5rem 0" }}>

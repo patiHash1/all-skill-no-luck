@@ -529,15 +529,15 @@
 .btn-primary {
   min-height: 44px;
   padding: 0.65rem 1.75rem;
-  background: linear-gradient(135deg, var(--color-accent), #00e5ff);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-cyan) 100%);
   color: #fff;
-  border-radius: 3px;
+  border-radius: 4px;
   font-weight: 700;
-  font-size: 0.825rem;
-  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: opacity 0.15s, transform 0.1s, box-shadow 0.15s;
-  box-shadow: 0 4px 15px rgba(155, 44, 255, 0.3);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(56, 97, 251, 0.4);
   -webkit-tap-highlight-color: transparent;
 }
 
