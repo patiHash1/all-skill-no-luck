@@ -28,7 +28,7 @@ function App() {
       <PredictionProvider>
         <LiveMatchProvider>
           <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
-          <main>
+          <main key={activeTab}>
             {activeTab === "home" && (
               <Home onPredict={() => setActiveTab("results")} />
             )}
