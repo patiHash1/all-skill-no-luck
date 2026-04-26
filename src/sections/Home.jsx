@@ -47,26 +47,19 @@ export default function Home({ onPredict }) {
 
   return (
     <div className="page hero-page">
-      {/* Decorative ambient orbs */}
-      <div className="hero-orb hero-orb-1" aria-hidden="true" />
-      <div className="hero-orb hero-orb-2" aria-hidden="true" />
-
       {/* ── Compact Hero Section ── */}
       <div className="hero-section">
         <div className="hero-section-bg" aria-hidden="true" />
-        
+
         <div className="hero-badge">
           <Sparkles size={14} className="gold" /> {t("home.badge")}
         </div>
 
-        <div className="hero-title-container">
-          <div className="hero-title-bg" aria-hidden="true" />
-          <h1 className="hero-title">
-            {t("home.title_line1")}{" "}
-            <span className="gold">{t("home.title_line2")}</span>{" "}
-            {t("home.title_line3")}
-          </h1>
-        </div>
+        <h1 className="hero-title">
+          {t("home.title_line1")}{" "}
+          <span className="gold">{t("home.title_line2")}</span>{" "}
+          {t("home.title_line3")}
+        </h1>
 
         {/* Countdown to Live Match */}
         <div className="countdown" style={{ margin: "0.5rem 0" }}>

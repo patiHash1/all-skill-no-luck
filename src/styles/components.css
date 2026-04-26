@@ -87,8 +87,8 @@
 
 /* ── Page wrapper ───────────────────────────── */
 .page {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   padding: 4.5rem 1rem 6.5rem;
   min-height: 100vh;
   animation: page-enter 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
