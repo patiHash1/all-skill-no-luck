@@ -53,6 +53,8 @@ export default function Home({ onPredict }) {
 
       {/* ── Compact Hero Section ── */}
       <div className="hero-section">
+        <div className="hero-section-bg" aria-hidden="true" />
+        
         <div className="hero-badge">
           <Sparkles size={14} className="gold" /> {t("home.badge")}
         </div>

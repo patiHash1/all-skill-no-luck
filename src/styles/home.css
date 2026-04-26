@@ -37,8 +37,27 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 1.5rem;
-  padding: 2.5rem 0 3.5rem;
+  gap: 1.25rem;
+  padding: 2rem 0 4rem;
+  margin-top: -1.5rem; /* bridge gap to navbar */
+}
+
+.hero-section-bg {
+  position: absolute;
+  top: -4.5rem; /* reach up to the bottom of the fixed navbar */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  bottom: 0;
+  background-image: url('/EA-FC-Is-Just-FIFA-Culture.png');
+  background-size: cover;
+  background-position: center 25%;
+  opacity: 0.5;
+  mask-image: linear-gradient(to bottom, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent);
+  z-index: -1;
+  pointer-events: none;
+  border-bottom: 1px solid var(--color-border);
 }
 
 /* Goal.com badge: sharp red pill */
@@ -58,11 +77,14 @@
 
 /* UEFA-style massive heading */
 .hero-title {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-heading);
   font-size: clamp(3rem, 10vw, 6rem);
   line-height: 0.86;
   color: var(--color-text);
   letter-spacing: 0.03em;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.5);
 }
 
 .hero-title .gold { color: var(--color-accent); }
