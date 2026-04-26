@@ -5,9 +5,9 @@
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 50;
-  background: var(--color-bg);
-  border-bottom: 3px solid var(--color-accent); /* Goal.com red bottom stripe */
-  box-shadow: 0 2px 20px rgba(0,0,0,0.6);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border-2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 .navbar-inner {
@@ -76,9 +76,9 @@
   position: fixed;
   bottom: 0; left: 0; right: 0;
   z-index: 50;
-  background: var(--color-bg);
+  background: var(--color-surface);
   border-top: 1px solid var(--color-border-2);
-  box-shadow: 0 -4px 24px rgba(0,0,0,0.6);
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.4);
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 

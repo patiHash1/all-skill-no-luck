@@ -4,46 +4,43 @@
    ═══════════════════════════════════════════════════ */
 
 :root {
+  /* ── Backgrounds & Surfaces — Charcoal Navy ─────── */
+  --color-bg:        #0d1117;   /* image: very dark charcoal     */
+  --color-surface:   #161b22;   /* image: elevated surface       */
+  --color-card:      #1c2128;   /* image: card background        */
+  --color-card-2:    #22272e;   /* card hover                    */
 
-  /* ── Backgrounds & Surfaces ─────────────────────── */
-  --color-bg:        #0a0a0f;   /* deeper background for contrast */
-  --color-surface:   #12121a;   /* elevated surface      */
-  --color-card:      #161622;   /* card background       */
-  --color-card-2:    #1c1c2a;   /* card hover / elevated */
+  /* ── Borders — Dark Blue-Gray ───────────────────── */
+  --color-border:    #30363d;   /* image: subtle divider         */
+  --color-border-2:  #444c56;   /* image: visible border         */
 
-  /* ── Borders ────────────────────────────────────── */
-  --color-border:    #2a2a3a;   /* subtle divider        */
-  --color-border-2:  #3a3a4e;   /* visible border        */
+  /* ── Primary Accent — Electric Blue ─────────────── */
+  --color-accent:    #3861fb;   /* electric blue         */
+  --color-accent-2:  #4d7cff;   /* lighter — hover state */
+  --color-accent-dim:#224AB2;   /* darker — pressed      */
 
-  /* ── Primary Accent — Vibrant Gradient Core ───────── */
-  --color-accent:    #9b2cff;   /* vibrant purple        */
-  --color-accent-2:  #b65aff;   /* lighter — hover state */
-  --color-accent-dim:#7012cc;   /* darker  — pressed     */
+  /* ── Secondary — Electric Cyan ──────────────────── */
+  --color-blue:      #3861fb;
+  --color-blue-2:    #2563eb;
+  --color-cyan:      #00d1ff;   /* vibrant cyan          */
 
-  /* ── Secondary — Electric Blue ───────────────── */
-  --color-blue:      #0055ff;
-  --color-blue-2:    #3377ff;   /* hover state           */
-  --color-cyan:      #00e5ff;   /* vibrant cyan          */
+  /* ── Text Scale — High Contrast ─────────────────── */
+  --color-text:      #ffffff;   /* primary white         */
+  --color-text-2:    #9AB1CB;   /* secondary blue-gray   */
+  --color-muted:     #64748b;   /* labels, meta          */
+  --color-muted-2:   #475569;   /* dimmed                */
 
-  /* ── Text Scale ───────────────────────────────────
-     High contrast for football data readability     */
-  --color-text:      #ffffff;   /* primary text          */
-  --color-text-2:    #cccccc;   /* secondary text        */
-  --color-muted:     #888888;   /* labels, meta          */
-  --color-muted-2:   #aaaaaa;   /* dimmed                */
-
-  /* ── Status Colors ────────────────────────────────
-     FotMob live green, standard error red           */
-  --color-green:     #00a650;   /* live / correct        */
-  --color-red:       #e53e3e;   /* error / danger        */
-  --color-gold:      #d4af37;   /* trophies / ranking    */
+  /* ── Status Colors ──────────────────────────────── */
+  --color-green:     #6AC127;   /* vibrant green         */
+  --color-red:       #ff4d4d;   /* vibrant error red     */
+  --color-gold:      #3fdb2a;   /* user-preferred green-gold */
 
   /* ── Functional Translucent Tokens ──────────────── */
-  --color-accent-soft: rgba(155, 44, 255, 0.08);
-  --color-accent-soft-2: rgba(155, 44, 255, 0.04);
-  --color-blue-soft:   rgba(0, 85, 255, 0.1);
-  --color-red-soft:    rgba(229, 62, 62, 0.1);
-  --color-gold-soft:   rgba(212, 175, 55, 0.1);
+  --color-accent-soft: rgba(56, 97, 251, 0.1);
+  --color-accent-soft-2: rgba(56, 97, 251, 0.05);
+  --color-blue-soft:   rgba(0, 209, 255, 0.1);
+  --color-red-soft:    rgba(255, 77, 77, 0.1);
+  --color-gold-soft:   rgba(63, 219, 42, 0.1);
 
 }
 
